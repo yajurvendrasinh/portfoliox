@@ -11,13 +11,20 @@ export interface NavigationProps {
 
 const NAV_ITEMS = [
   { label: "HOME", href: "#/" },
-  { label: "LINKEDIN", href: "https://www.linkedin.com/in/ygohil", external: true },
+  {
+    label: "LINKEDIN",
+    href: "https://www.linkedin.com/in/ygohil",
+    external: true,
+  },
 ];
 
 export default function Navigation({ activeItem = "HOME" }: NavigationProps) {
   return (
     <nav className="flex justify-between items-center px-6 md:px-12 w-full h-16">
-      <a href="#/" className="font-display font-bold tracking-tighter text-ink text-lg hover:opacity-70 transition-opacity">
+      <a
+        href="#/"
+        className="font-display font-bold tracking-tighter text-ink text-lg hover:opacity-70 transition-opacity"
+      >
         Yajurvendrasinh Gohil
       </a>
       <div className="hidden md:flex items-center gap-8">
@@ -25,9 +32,13 @@ export default function Navigation({ activeItem = "HOME" }: NavigationProps) {
           <a
             key={item.label}
             href={item.href}
-            {...("external" in item && item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            {...("external" in item && item.external
+              ? { target: "_blank", rel: "noopener noreferrer" }
+              : {})}
             className={`font-display uppercase tracking-widest text-[10px] transition-colors ${
-              item.label === activeItem ? "text-ink font-bold border-b border-accent pb-1" : "text-ink-subtle hover:text-ink"
+              item.label === activeItem
+                ? "text-ink font-bold border-b border-accent pb-1"
+                : "text-ink-subtle hover:text-ink"
             }`}
           >
             {item.label}
@@ -36,8 +47,8 @@ export default function Navigation({ activeItem = "HOME" }: NavigationProps) {
       </div>
       <div className="flex items-center gap-4">
         <ThemeToggle />
-        <a 
-          href="/resume.html"
+        <a
+          href="./resume.html"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-accent text-on-accent px-6 py-2 font-display uppercase tracking-widest text-[10px] transition-colors hover:bg-accent-hover"

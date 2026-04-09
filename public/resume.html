@@ -1,608 +1,752 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Yajurvendrasinh Gohil — Resume</title>
-  <meta name="description" content="Senior product designer and design engineer. Design systems, UX, and front-end implementation at Salesforce, Roku, Levi's, Apple."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:opsz,wght@14..32,100..900&family=Geist+Mono:wght@400&display=swap" rel="stylesheet"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yajurvendrasinh Gohil — Resume</title>
+    <meta
+      name="description"
+      content="Senior product designer and design engineer. Design systems, UX, and front-end implementation at Salesforce, Roku, Levi's, Apple."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:opsz,wght@14..32,100..900&family=Geist+Mono:wght@400&display=swap"
+      rel="stylesheet"
+    />
 
-  <style>
-    /* ── RESET ── */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <style>
+      /* ── RESET ── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    /* ── TOKENS ── */
-    :root {
-      --ink:     #111111;
-      --mid:     #3a3a3a;
-      --muted:   #666666;
-      --rule:    #cccccc;
-      --page-w:  748px;
-    }
+      /* ── TOKENS ── */
+      :root {
+        --ink: #111111;
+        --mid: #3a3a3a;
+        --muted: #666666;
+        --rule: #cccccc;
+        --page-w: 748px;
+      }
 
-    /* ── BASE ── */
-    body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      font-size: 11px;
-      line-height: 1.5;
-      color: var(--ink);
-      background: #ffffff;
-      padding: 32px 16px;
-    }
+      /* ── BASE ── */
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          sans-serif;
+        font-size: 11px;
+        line-height: 1.5;
+        color: var(--ink);
+        background: #ffffff;
+        padding: 32px 16px;
+      }
 
-    /* ── PAGE ── */
-    .page {
-      width: var(--page-w);
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 40px 44px 40px 44px;
-    }
+      /* ── PAGE ── */
+      .page {
+        width: var(--page-w);
+        margin: 0 auto;
+        background: #ffffff;
+        padding: 40px 44px 40px 44px;
+      }
 
-    /* ─────────────────────────────────────
+      /* ─────────────────────────────────────
        HEADER
     ───────────────────────────────────── */
-    .header {
-      margin-bottom: 8px;
-    }
-
-    .header__name {
-      font-family: 'Space Grotesk', -apple-system, sans-serif;
-      font-style: normal;
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      line-height: 1;
-      color: var(--ink);
-      margin-bottom: 8px;
-    }
-
-    /* Horizontal contact bar — phone · email · linkedin · portfolio */
-    .header__contacts {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--muted);
-      list-style: none;
-    }
-
-    .header__contacts li {
-      display: flex;
-      align-items: center;
-    }
-
-    
-
-    .header__contacts a {
-      color: #1a56db;
-      text-decoration: underline;
-    }
-
-    .header__contacts a:hover {
-      text-decoration: underline;
-    }
-
-    /* ── DIVIDER ── */
-    .divider {
-      border: none;
-      border-top: 1.5px solid var(--ink);
-      margin: 0 0 10px;
-    }
-
-    /* ─────────────────────────────────────
-       SECTIONS
-    ───────────────────────────────────── */
-    .section {
-      margin-bottom: 6px;
-    }
-
-    .section:last-child {
-      margin-bottom: 0;
-    }
-
-    .section__label {
-      font-family: 'Inter', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 4px;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    /* ─────────────────────────────────────
-       SKILLS
-    ───────────────────────────────────── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 130px 1fr;
-      row-gap: 2px;
-      column-gap: 14px;
-    }
-
-    .skill-cat {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.5;
-      padding-top: 1px;
-    }
-
-    .skill-val {
-      font-size: 11px;
-      font-weight: 400;
-      color: var(--mid);
-      line-height: 1.5;
-    }
-
-    /* ─────────────────────────────────────
-       EXPERIENCE
-    ───────────────────────────────────── */
-    .job {
-      padding: 8px 0;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .job:first-child {
-      padding-top: 0;
-    }
-
-    .job:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    /* Row 1: title left, dates right */
-    .job__row1 {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 12px;
-      margin-bottom: 1px;
-    }
-
-    .job__title {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      color: var(--ink);
-      line-height: 1.25;
-      flex: 1;
-      text-align: left;
-    }
-
-    .job__dates {
-      font-family: 'Geist Mono', 'Courier New', monospace;
-      font-size: 10px;
-      font-weight: 400;
-      color: var(--muted);
-      white-space: nowrap;
-      flex-shrink: 0;
-      flex: 1;
-      text-align: right;
-    }
-
-    .job__scope {
-      font-size: 10px;
-      font-weight: 400;
-      font-style: italic;
-      color: var(--muted);
-    }
-
-    .job__sep {
-      margin: 0 5px;
-      color: var(--rule);
-      font-size: 10px;
-    }
-
-    .job__company {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      flex: 1;
-      text-align: center;
-    }
-
-    /* Bullets */
-    .job__bullets {
-      list-style: none;
-      padding: 0;
-    }
-
-    .job__bullets li {
-      font-size: 11px;
-      font-weight: 400;
-      color: var(--mid);
-      line-height: 1.52;
-      padding-left: 13px;
-      position: relative;
-      margin-bottom: 2px;
-      text-wrap: pretty;
-    }
-
-    .job__bullets li:last-child {
-      margin-bottom: 0;
-    }
-
-    .job__bullets li::before {
-      content: '–';
-      position: absolute;
-      left: 0;
-      color: var(--rule);
-    }
-
-    .job__bullets li strong {
-      font-weight: 600;
-      color: var(--ink);
-    }
-
-    /* ─────────────────────────────────────
-       EDUCATION
-    ───────────────────────────────────── */
-    .edu-rows {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .edu-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 12px;
-    }
-
-    .edu__left {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .edu__degree {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--ink);
-    }
-
-    .edu__school {
-      font-size: 10px;
-      font-weight: 400;
-      color: var(--muted);
-    }
-
-    .edu__year {
-      font-family: 'Geist Mono', 'Courier New', monospace;
-      font-size: 9px;
-      font-weight: 400;
-      color: var(--muted);
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    /* ── TABLET ── */
-    @media screen and (max-width: 768px) {
-      body {
-        padding: 24px 12px;
-      }
-
-      .page {
-        width: 100%;
-        padding: 32px 28px;
-      }
-
-      .header__contacts {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2px 12px;
-      }
-
-      .skills-grid {
-        grid-template-columns: 110px 1fr;
-        column-gap: 10px;
-      }
-
-      .job__row1 {
-        flex-wrap: wrap;
-        gap: 4px;
-      }
-
-      .job__company {
-        text-align: left;
-        flex: unset;
-      }
-
-      .job__dates {
-        flex: unset;
-        width: 100%;
-        text-align: left;
-      }
-    }
-
-    /* ── MOBILE ── */
-    @media screen and (max-width: 480px) {
-      body {
-        padding: 16px 8px;
-      }
-
-      .page {
-        padding: 24px 16px;
+      .header {
+        margin-bottom: 8px;
       }
 
       .header__name {
-        font-size: 20px;
+        font-family:
+          "Space Grotesk",
+          -apple-system,
+          sans-serif;
+        font-style: normal;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        line-height: 1;
+        color: var(--ink);
+        margin-bottom: 8px;
+      }
+
+      /* Horizontal contact bar — phone · email · linkedin · portfolio */
+      .header__contacts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--muted);
+        list-style: none;
+      }
+
+      .header__contacts li {
+        display: flex;
+        align-items: center;
+      }
+
+      .header__contacts a {
+        color: #1a56db;
+        text-decoration: underline;
+      }
+
+      .header__contacts a:hover {
+        text-decoration: underline;
+      }
+
+      /* ── DIVIDER ── */
+      .divider {
+        border: none;
+        border-top: 1.5px solid var(--ink);
+        margin: 0 0 10px;
+      }
+
+      /* ─────────────────────────────────────
+       SECTIONS
+    ───────────────────────────────────── */
+      .section {
         margin-bottom: 6px;
       }
 
-      .header__contacts {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2px 12px;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-        row-gap: 8px;
-      }
-
-      .skill-cat {
-        font-weight: 700;
+      .section:last-child {
         margin-bottom: 0;
       }
 
-      .skill-val {
+      .section__label {
+        font-family: "Inter", sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--muted);
         margin-bottom: 4px;
+        border-bottom: 1px solid var(--rule);
       }
 
+      /* ─────────────────────────────────────
+       SKILLS
+    ───────────────────────────────────── */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 130px 1fr;
+        row-gap: 2px;
+        column-gap: 14px;
+      }
+
+      .skill-cat {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--ink);
+        line-height: 1.5;
+        padding-top: 1px;
+      }
+
+      .skill-val {
+        font-size: 11px;
+        font-weight: 400;
+        color: var(--mid);
+        line-height: 1.5;
+      }
+
+      /* ─────────────────────────────────────
+       EXPERIENCE
+    ───────────────────────────────────── */
+      .job {
+        padding: 8px 0;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .job:first-child {
+        padding-top: 0;
+      }
+
+      .job:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      /* Row 1: title left, dates right */
       .job__row1 {
-        flex-direction: column;
-        gap: 2px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+        margin-bottom: 1px;
       }
 
       .job__title {
-        font-size: 11px;
-      }
-
-      .job__company {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        color: var(--ink);
+        line-height: 1.25;
+        flex: 1;
         text-align: left;
-        font-size: 10px;
-        flex: unset;
       }
 
       .job__dates {
-        text-align: left;
-        flex: unset;
+        font-family: "Geist Mono", "Courier New", monospace;
+        font-size: 10px;
+        font-weight: 400;
+        color: var(--muted);
+        white-space: nowrap;
+        flex-shrink: 0;
+        flex: 1;
+        text-align: right;
+      }
+
+      .job__scope {
+        font-size: 10px;
+        font-weight: 400;
+        font-style: italic;
+        color: var(--muted);
+      }
+
+      .job__sep {
+        margin: 0 5px;
+        color: var(--rule);
+        font-size: 10px;
+      }
+
+      .job__company {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        flex: 1;
+        text-align: center;
+      }
+
+      /* Bullets */
+      .job__bullets {
+        list-style: none;
+        padding: 0;
+      }
+
+      .job__bullets li {
+        font-size: 11px;
+        font-weight: 400;
+        color: var(--mid);
+        line-height: 1.52;
+        padding-left: 13px;
+        position: relative;
+        margin-bottom: 2px;
+        text-wrap: pretty;
+      }
+
+      .job__bullets li:last-child {
+        margin-bottom: 0;
+      }
+
+      .job__bullets li::before {
+        content: "–";
+        position: absolute;
+        left: 0;
+        color: var(--rule);
+      }
+
+      .job__bullets li strong {
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      /* ─────────────────────────────────────
+       EDUCATION
+    ───────────────────────────────────── */
+      .edu-rows {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
       }
 
       .edu-row {
-        flex-direction: column;
-        gap: 2px;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
       }
 
       .edu__left {
-        flex-direction: column;
-        gap: 2px;
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .edu__degree {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .edu__school {
+        font-size: 10px;
+        font-weight: 400;
+        color: var(--muted);
       }
 
       .edu__year {
-        text-align: left;
+        font-family: "Geist Mono", "Courier New", monospace;
+        font-size: 9px;
+        font-weight: 400;
+        color: var(--muted);
+        white-space: nowrap;
+        flex-shrink: 0;
       }
-    }
 
-    /* ── FAB ── */
-    .fab-download {
-      position: fixed;
-      bottom: 3rem;
-      right: 1.5rem;
-      width: 64px;
-      height: 64px;
-      background: #111111;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      border: none;
-      transition: opacity 0.2s;
-      z-index: 100;
-    }
-    .fab-download:hover {
-      opacity: 0.85;
-    }
+      /* ── TABLET ── */
+      @media screen and (max-width: 768px) {
+        body {
+          padding: 24px 12px;
+        }
 
-    /* ── PRINT ── */
-    @media print {
-      body {
-        background: #fff;
-        padding: 0;
+        .page {
+          width: 100%;
+          padding: 32px 28px;
+        }
+
+        .header__contacts {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2px 12px;
+        }
+
+        .skills-grid {
+          grid-template-columns: 110px 1fr;
+          column-gap: 10px;
+        }
+
+        .job__row1 {
+          flex-wrap: wrap;
+          gap: 4px;
+        }
+
+        .job__company {
+          text-align: left;
+          flex: unset;
+        }
+
+        .job__dates {
+          flex: unset;
+          width: 100%;
+          text-align: left;
+        }
       }
-      .page {
-        width: 100%;
-        padding: 8mm 12mm;
+
+      /* ── MOBILE ── */
+      @media screen and (max-width: 480px) {
+        body {
+          padding: 16px 8px;
+        }
+
+        .page {
+          padding: 24px 16px;
+        }
+
+        .header__name {
+          font-size: 20px;
+          margin-bottom: 6px;
+        }
+
+        .header__contacts {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2px 12px;
+        }
+
+        .skills-grid {
+          grid-template-columns: 1fr;
+          row-gap: 8px;
+        }
+
+        .skill-cat {
+          font-weight: 700;
+          margin-bottom: 0;
+        }
+
+        .skill-val {
+          margin-bottom: 4px;
+        }
+
+        .job__row1 {
+          flex-direction: column;
+          gap: 2px;
+        }
+
+        .job__title {
+          font-size: 11px;
+        }
+
+        .job__company {
+          text-align: left;
+          font-size: 10px;
+          flex: unset;
+        }
+
+        .job__dates {
+          text-align: left;
+          flex: unset;
+        }
+
+        .edu-row {
+          flex-direction: column;
+          gap: 2px;
+        }
+
+        .edu__left {
+          flex-direction: column;
+          gap: 2px;
+        }
+
+        .edu__year {
+          text-align: left;
+        }
       }
-      .fab-download { display: none; }
-    }
 
-    @page {
-      size: A4 portrait;
-      margin: 0;
-    }
-  </style>
-</head>
-<body>
-<article class="page" role="main">
+      /* ── FAB ── */
+      .fab-download {
+        position: fixed;
+        bottom: 3rem;
+        right: 1.5rem;
+        width: 64px;
+        height: 64px;
+        background: #111111;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: none;
+        transition: opacity 0.2s;
+        z-index: 100;
+      }
+      .fab-download:hover {
+        opacity: 0.85;
+      }
 
-  <!-- HEADER -->
-  <header class="header">
-    <h1 class="header__name">Yajurvendrasinh Gohil</h1>
-    <div aria-label="Contact information" aria-roledescription="Contact information">
-      <ul class="header__contacts">
-        <li><a href="mailto:yajur.gohil@gmail.com">yajur.gohil@gmail</a></li>
-        <li><a href="https://www.linkedin.com/in/ygohil" target="_blank" rel="noopener noreferrer">www.linkedin.com/in/ygohil</a></li>
-        <li><a href="https://yajurvendrasinh.github.io/portfolio/" target="_blank" rel="noopener noreferrer">Portfolio</a></li>
-      </ul>
-    </div>
-  </header>
+      /* ── PRINT ── */
+      @media print {
+        body {
+          background: #fff;
+          padding: 0;
+        }
+        .page {
+          width: 100%;
+          padding: 8mm 12mm;
+        }
+        .fab-download {
+          display: none;
+        }
+      }
 
-  <hr class="divider" aria-hidden="true"/>
-
-  <!-- SKILLS -->
-  <section class="section" aria-labelledby="skills-heading">
-    <h2 class="section__label" id="skills-heading">Skills</h2>
-    <div class="skills-grid">
-
-      <span class="skill-cat">Design &amp; UX</span>
-      <span class="skill-val">Product design, interaction design, information architecture, design systems, design tokens, component libraries, responsive design, inclusive design</span>
-
-      <span class="skill-cat">Design tools</span>
-      <span class="skill-val">Figma, Figma Make, Figma MCP, Framer, Sketch, Zeplin, Storybook, Adobe Creative Suite, Claude, Cursor, GitHub Copilot</span>
-
-      <span class="skill-cat">Front-end</span>
-      <span class="skill-val">TypeScript, JavaScript (ES5/ES6), React.js, Vue.js, LWC (Lightning Web Components), HTML5, SASS/SCSS, CSS3, Tailwind, Bootstrap, MUI, Node.js, REST API</span>
-
-      <span class="skill-cat">Platform &amp; Process</span>
-      <span class="skill-val">Git, GitLab, Cypress, AWS, CI/CD, New Relic, Agile, Scrum, Kanban, Design sprints</span>
-
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section class="section" aria-labelledby="experience-heading">
-    <h2 class="section__label" id="experience-heading">Experience</h2>
-
-    <!-- Salesforce -->
-    <div class="job">
-      <div class="job__row1">
-        <span class="job__title">Sr. Software Engineer — Frontend</span>
-        <span class="job__company">Salesforce</span>
-        <span class="job__dates">Jan 2024 – Present</span>
-      </div>
-      <ul class="job__bullets" aria-label="Role at Salesforce">
-        <li>Led design and adoption of the <strong>Salesforce COSMOS Design System</strong> across Tableau Next — defining component patterns, usage guidelines, and aligning product UI with enterprise standards across multiple teams.</li>
-        <li>Owned end-to-end design of reusable product UI (<strong>Unified Filters, Data Pickers, Operator Panels</strong>) — from user flows and Figma prototypes through to production <strong>LWC</strong> with TypeScript, reducing design-to-dev handoff friction across 3+ product teams.</li>
-        <li>Drove <strong>WCAG 2.1 accessibility</strong> compliance on Tableau Next dashboards — designing and implementing ARIA roles, keyboard navigation, and screen reader support in partnership with UX and QA.</li>
-        <li>Partnered with UX Leads and Design System teams to define migration patterns and uplift legacy interfaces to <strong>SLDS Plus designed components and tokens</strong>, enabling faster and more consistent design execution across the Tableau Next ecosystem.</li>
-      </ul>
-    </div>
-
-    <!-- Roku -->
-    <div class="job">
-      <div class="job__row1">
-        <span class="job__title">Sr. Software Engineer — Frontend</span>
-        <span class="job__company">Roku Inc.</span>
-        <span class="job__dates">Jan 2021 – Dec 2023</span>
-      </div>
-      <ul class="job__bullets" aria-label="Role at Roku">
-        <li>Delivered end-to-end UX for high-stakes consumer products launches by designing and engineering ui-flows for user onboarding, device activation, account management and email template experiences for Roku's web platform — improving visual consistency, cross-browser behavior, and accessibility (ADA, W3C).</li>
-        <li>Spearheaded the launch of <strong>Paramount+, HBO Max, and Peacock</strong> owning the frontend and UX implementations for partner integrations on the Roku web platform, working cross-functionally with product and design stakeholders.</li>
-        <li>Built and published a consumer-centric <strong>React UI component library</strong> as NPM package — establishing consistent design patterns and reducing design-to-development friction and increasing implementation velocity across multiple Roku teams.</li>
-        <li>Leveraged GTM tagging to measure user engagement and page view performance, feeding data driven decisions back into UX decision-making and performance optimization.</li>
-      </ul>
-    </div>
-
-    <!-- Levi's -->
-    <div class="job">
-      <div class="job__row1">
-        <span class="job__title">Front End Web Developer</span>
-        <span class="job__company">Levi Strauss &amp; Co.</span>
-        <span class="job__dates">Jun 2017 – Dec 2020</span>
-      </div>
-      <ul class="job__bullets" aria-label="Role at Levi Strauss">
-        <li>Defined the consumer-facing design language and built a <strong>modular UI component library</strong> for Levi.com and Dockers.com — translating Figma and Zeplin designs into a scalable headless front-end (SAP Hybris, Content Stack).</li>
-        <li>Ensured <strong>accessibility (W3C/ADA), internationalization, and SEO</strong> compliance across global ecommerce experiences, coordinating with regional teams on multi-market launches.</li>
-        <li>Partnered with cross-functional orgs (Design, Marketing & Branding and Engineering) in Agile and Design sprints, contributing to UI/UX scoping from early ideation through delivery.</li>
-        <li>Improved performance through <strong>lazy-loading strategies and build tooling</strong> (Grunt, Webpack); maintained design fidelity across browsers and devices through rigorous cross-platform QA.</li>
-        <li>Coordinated global product launches with Product, Marketing, and UX; led offshore design and development collaboration for consistent, on-time delivery.</li>
-      </ul>
-    </div>
-
-    <!-- Apple -->
-    <div class="job">
-      <div class="job__row1">
-        <span class="job__title">UI Engineer</span>
-        <span class="job__company">Apple Inc.</span>
-        <span class="job__dates">Oct 2016 – May 2017</span>
-      </div>
-      <ul class="job__bullets" aria-label="Role at Apple">
-        <li>Applied and implemented Apple's design philosophy, platform conventions and <strong>UI/UX patterns</strong> across the Apple Online Store CMS.</li>
-        <li>Worked within Apple's design-led, cross-functional product culture - collaborating with designers and engineers to uplift product UX quality, visual precision and interaction fidelity.</li>
-      </ul>
-    </div>
-
-    <!-- Scalable Systems -->
-    <div class="job">
-      <div class="job__row1">
-        <span class="job__title">UX Engineer</span>
-        <span class="job__company">SSR Labs, Inc.</span>
-        <span class="job__dates">Mar 2016 – Oct 2016</span>
-      </div>
-      <ul class="job__bullets" aria-label="Role at Scalable Systems">
-        <li>Owned the full design process — wireframes, interaction flows, prototypes, and high-fidelity mockups — to define the company's core web presence and establish design language in collaboration with director and product managers from the ground up.</li>
-      </ul>
-    </div>
-
-  </section>
-
-  <!-- EDUCATION -->
-  <section class="section" aria-labelledby="education-heading">
-    <h2 class="section__label" id="education-heading">Education</h2>
-    <div class="edu-rows">
-
-      <div class="edu-row">
-        <div class="edu__left">
-          <span class="edu__degree">UX Design Professional Certificate</span>
-          <span class="edu__school">Google</span>
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <article class="page" role="main">
+      <!-- HEADER -->
+      <header class="header">
+        <h1 class="header__name">Yajurvendrasinh Gohil</h1>
+        <div
+          aria-label="Contact information"
+          aria-roledescription="Contact information"
+        >
+          <ul class="header__contacts">
+            <li>
+              <a href="mailto:yajur.gohil@gmail.com">yajur.gohil@gmail</a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/ygohil"
+                target="_blank"
+                rel="noopener noreferrer"
+                >www.linkedin.com/in/ygohil</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://yajurvendrasinh.github.io/portfolio/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Portfolio</a
+              >
+            </li>
+          </ul>
         </div>
-        <span class="edu__year">Ongoing</span>
-      </div>
+      </header>
 
-      <div class="edu-row">
-        <div class="edu__left">
-          <span class="edu__degree">NASM Certified Professional Fitness Trainer</span>
-          <span class="edu__school">NASM</span>
+      <hr class="divider" aria-hidden="true" />
+
+      <!-- SKILLS -->
+      <section class="section" aria-labelledby="skills-heading">
+        <h2 class="section__label" id="skills-heading">Skills</h2>
+        <div class="skills-grid">
+          <span class="skill-cat">Design &amp; UX</span>
+          <span class="skill-val"
+            >Product design, interaction design, information architecture,
+            design systems, design tokens, component libraries, responsive
+            design, inclusive design</span
+          >
+
+          <span class="skill-cat">Design tools</span>
+          <span class="skill-val"
+            >Figma, Figma Make, Figma MCP, Framer, Sketch, Zeplin, Storybook,
+            Adobe Creative Suite, Claude, Cursor, GitHub Copilot</span
+          >
+
+          <span class="skill-cat">Front-end</span>
+          <span class="skill-val"
+            >TypeScript, JavaScript (ES5/ES6), React.js, Vue.js, LWC (Lightning
+            Web Components), HTML5, SASS/SCSS, CSS3, Tailwind, Bootstrap, MUI,
+            Node.js, REST API</span
+          >
+
+          <span class="skill-cat">Platform &amp; Process</span>
+          <span class="skill-val"
+            >Git, GitLab, Cypress, AWS, CI/CD, New Relic, Agile, Scrum, Kanban,
+            Design sprints</span
+          >
         </div>
-        <span class="edu__year">Jul 2022</span>
-      </div>
+      </section>
 
-      <div class="edu-row">
-        <div class="edu__left">
-          <span class="edu__degree">Master of Science, Software Engineering</span>
-          <span class="edu__school">San Jose State University</span>
+      <!-- EXPERIENCE -->
+      <section class="section" aria-labelledby="experience-heading">
+        <h2 class="section__label" id="experience-heading">Experience</h2>
+
+        <!-- Salesforce -->
+        <div class="job">
+          <div class="job__row1">
+            <span class="job__title">Sr. Software Engineer — Frontend</span>
+            <span class="job__company">Salesforce</span>
+            <span class="job__dates">Jan 2024 – Present</span>
+          </div>
+          <ul class="job__bullets" aria-label="Role at Salesforce">
+            <li>
+              Led design and adoption of the
+              <strong>Salesforce COSMOS Design System</strong> across Tableau
+              Next — defining component patterns, usage guidelines, and aligning
+              product UI with enterprise standards across multiple teams.
+            </li>
+            <li>
+              Owned end-to-end design of reusable product UI (<strong
+                >Unified Filters, Data Pickers, Operator Panels</strong
+              >) — from user flows and Figma prototypes through to production
+              <strong>LWC</strong> with TypeScript, reducing design-to-dev
+              handoff friction across 3+ product teams.
+            </li>
+            <li>
+              Drove <strong>WCAG 2.1 accessibility</strong> compliance on
+              Tableau Next dashboards — designing and implementing ARIA roles,
+              keyboard navigation, and screen reader support in partnership with
+              UX and QA.
+            </li>
+            <li>
+              Partnered with UX Leads and Design System teams to define
+              migration patterns and uplift legacy interfaces to
+              <strong>SLDS Plus designed components and tokens</strong>,
+              enabling faster and more consistent design execution across the
+              Tableau Next ecosystem.
+            </li>
+          </ul>
         </div>
-        <span class="edu__year">Dec 2016</span>
-      </div>
 
-      <div class="edu-row">
-        <div class="edu__left">
-          <span class="edu__degree">Bachelor of Science, Computer Science</span>
-          <span class="edu__school">Gujarat Technological University</span>
+        <!-- Roku -->
+        <div class="job">
+          <div class="job__row1">
+            <span class="job__title">Sr. Software Engineer — Frontend</span>
+            <span class="job__company">Roku Inc.</span>
+            <span class="job__dates">Jan 2021 – Dec 2023</span>
+          </div>
+          <ul class="job__bullets" aria-label="Role at Roku">
+            <li>
+              Delivered end-to-end UX for high-stakes consumer products launches
+              by designing and engineering ui-flows for user onboarding, device
+              activation, account management and email template experiences for
+              Roku's web platform — improving visual consistency, cross-browser
+              behavior, and accessibility (ADA, W3C).
+            </li>
+            <li>
+              Spearheaded the launch of
+              <strong>Paramount+, HBO Max, and Peacock</strong> owning the
+              frontend and UX implementations for partner integrations on the
+              Roku web platform, working cross-functionally with product and
+              design stakeholders.
+            </li>
+            <li>
+              Built and published a consumer-centric
+              <strong>React UI component library</strong> as NPM package —
+              establishing consistent design patterns and reducing
+              design-to-development friction and increasing implementation
+              velocity across multiple Roku teams.
+            </li>
+            <li>
+              Leveraged GTM tagging to measure user engagement and page view
+              performance, feeding data driven decisions back into UX
+              decision-making and performance optimization.
+            </li>
+          </ul>
         </div>
-        <span class="edu__year">Aug 2013</span>
-      </div>
 
-    </div>
-  </section>
+        <!-- Levi's -->
+        <div class="job">
+          <div class="job__row1">
+            <span class="job__title">Front End Web Developer</span>
+            <span class="job__company">Levi Strauss &amp; Co.</span>
+            <span class="job__dates">Jun 2017 – Dec 2020</span>
+          </div>
+          <ul class="job__bullets" aria-label="Role at Levi Strauss">
+            <li>
+              Defined the consumer-facing design language and built a
+              <strong>modular UI component library</strong> for Levi.com and
+              Dockers.com — translating Figma and Zeplin designs into a scalable
+              headless front-end (SAP Hybris, Content Stack).
+            </li>
+            <li>
+              Ensured
+              <strong
+                >accessibility (W3C/ADA), internationalization, and SEO</strong
+              >
+              compliance across global ecommerce experiences, coordinating with
+              regional teams on multi-market launches.
+            </li>
+            <li>
+              Partnered with cross-functional orgs (Design, Marketing & Branding
+              and Engineering) in Agile and Design sprints, contributing to
+              UI/UX scoping from early ideation through delivery.
+            </li>
+            <li>
+              Improved performance through
+              <strong>lazy-loading strategies and build tooling</strong> (Grunt,
+              Webpack); maintained design fidelity across browsers and devices
+              through rigorous cross-platform QA.
+            </li>
+            <li>
+              Coordinated global product launches with Product, Marketing, and
+              UX; led offshore design and development collaboration for
+              consistent, on-time delivery.
+            </li>
+          </ul>
+        </div>
 
-</article>
+        <!-- Apple -->
+        <div class="job">
+          <div class="job__row1">
+            <span class="job__title">UI Engineer</span>
+            <span class="job__company">Apple Inc.</span>
+            <span class="job__dates">Oct 2016 – May 2017</span>
+          </div>
+          <ul class="job__bullets" aria-label="Role at Apple">
+            <li>
+              Applied and implemented Apple's design philosophy, platform
+              conventions and <strong>UI/UX patterns</strong> across the Apple
+              Online Store CMS.
+            </li>
+            <li>
+              Worked within Apple's design-led, cross-functional product culture
+              - collaborating with designers and engineers to uplift product UX
+              quality, visual precision and interaction fidelity.
+            </li>
+          </ul>
+        </div>
 
-<a class="fab-download" href="/resume.pdf" download aria-label="Download as PDF">
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-       fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-    <polyline points="7 10 12 15 17 10"/>
-    <line x1="12" y1="15" x2="12" y2="3"/>
-  </svg>
-</a>
-</body>
+        <!-- Scalable Systems -->
+        <div class="job">
+          <div class="job__row1">
+            <span class="job__title">UX Engineer</span>
+            <span class="job__company">SSR Labs, Inc.</span>
+            <span class="job__dates">Mar 2016 – Oct 2016</span>
+          </div>
+          <ul class="job__bullets" aria-label="Role at Scalable Systems">
+            <li>
+              Owned the full design process — wireframes, interaction flows,
+              prototypes, and high-fidelity mockups — to define the company's
+              core web presence and establish design language in collaboration
+              with director and product managers from the ground up.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="section" aria-labelledby="education-heading">
+        <h2 class="section__label" id="education-heading">Education</h2>
+        <div class="edu-rows">
+          <div class="edu-row">
+            <div class="edu__left">
+              <span class="edu__degree"
+                >UX Design Professional Certificate</span
+              >
+              <span class="edu__school">Google</span>
+            </div>
+            <span class="edu__year">Ongoing</span>
+          </div>
+
+          <div class="edu-row">
+            <div class="edu__left">
+              <span class="edu__degree"
+                >NASM Certified Professional Fitness Trainer</span
+              >
+              <span class="edu__school">NASM</span>
+            </div>
+            <span class="edu__year">Jul 2022</span>
+          </div>
+
+          <div class="edu-row">
+            <div class="edu__left">
+              <span class="edu__degree"
+                >Master of Science, Software Engineering</span
+              >
+              <span class="edu__school">San Jose State University</span>
+            </div>
+            <span class="edu__year">Dec 2016</span>
+          </div>
+
+          <div class="edu-row">
+            <div class="edu__left">
+              <span class="edu__degree"
+                >Bachelor of Science, Computer Science</span
+              >
+              <span class="edu__school">Gujarat Technological University</span>
+            </div>
+            <span class="edu__year">Aug 2013</span>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <a
+      class="fab-download"
+      href="./resume.pdf"
+      download
+      aria-label="Download as PDF"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+        <polyline points="7 10 12 15 17 10" />
+        <line x1="12" y1="15" x2="12" y2="3" />
+      </svg>
+    </a>
+  </body>
 </html>
