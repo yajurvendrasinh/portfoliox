@@ -1,4 +1,4 @@
-# Yajurvendrasinh Gohil
+# Yajurvendrasinh Gohil / Portfolio 2026
 
 A high-precision digital portfolio architected with a focus on **Digital Brutalism**, structural integrity, and mathematical balance. This project serves as a curation of artifacts and an exploration of raw digital aesthetics, updated for the 2026 landscape. Includes data-driven experience and play-state detail systems, a component library, and a standalone printable HTML resume.
 
@@ -7,16 +7,13 @@ A high-precision digital portfolio architected with a focus on **Digital Brutali
 ## Design Philosophy
 
 ### Digital Brutalism
-
 The interface is defined by its raw, unadorned structure. We celebrate the functional nature of the machine through:
-
 - **Monochromatic Palette**: A strict focus on `#f9f9f9` (surface), `#e8e8e8` (surface-high), and pure white tones to emphasize form over color. A dark mode alternative uses `#000000`, `#14213d` (navy), `#fca311` (amber accent), `#e5e5e5`, and `#ffffff`.
 - **Structural Grids**: Every element is aligned to a rigorous mathematical grid, ensuring optical balance and precision.
 - **Grain & Texture**: A persistent `.grain-overlay` adds a tactile, analog quality to the digital canvas using SVG-generated fractal noise.
 - **Artifacts Fade**: A sophisticated `.artifacts-fade` system utilizing `mask` and `backdrop-filter` to create seamless, feathered transitions between content sections.
 
 ### Typography
-
 - **Display**: **Space Grotesk** — a proportional sans-serif with geometric character used for all headings and display text.
 - **Body**: **Inter** — a variable sans-serif with optical sizing, optimized for screen readability in body text and metadata.
 - **Micro-labels**: Uppercase, wide-tracked labels for archival indexing and status indicators.
@@ -24,7 +21,6 @@ The interface is defined by its raw, unadorned structure. We celebrate the funct
 - **Headings**: `text-wrap: balance` on display headings for even line breaks.
 
 ### Motion & Interaction
-
 - **Layout Animations**: Utilizing `motion` for smooth, physics-based transitions between views, wrapped in `MotionConfig reducedMotion="user"` to respect the user's OS preference.
 - **Hero Text Flip**: The homepage hero headline cycles through role pairs (UX/ENGINEER → UX/DESIGNER → UI/DESIGNER → UI/ENGINEER → DESIGN/ENGINEER) using a 3D `rotateX` flip transition. Only one word changes per step, so a single slot flips while the other stays static. Powered by a `FlipWord` component that wraps each word in a `perspective` container and uses `AnimatePresence mode="wait"` for sequential exit/enter. The sequence and timing are defined in `HERO_SEQUENCE` and `FLIP_INTERVAL_MS` constants in `App.tsx`.
 - **Hover Reveals**: Metadata and archival details are revealed through precise, sliding animations. In dark mode, card hover overlays use the amber accent (`#fca311`) background with black text for contrast consistency.
@@ -36,7 +32,6 @@ The interface is defined by its raw, unadorned structure. We celebrate the funct
 ## Technical Architecture
 
 ### Core Stack
-
 - **Framework**: [React 19](https://react.dev/)
 - **Build Tool**: [Vite 6](https://vitejs.dev/)
 - **Styling**: [Tailwind CSS 4](https://tailwindcss.com/) (via `@tailwindcss/vite` plugin)
@@ -45,25 +40,22 @@ The interface is defined by its raw, unadorned structure. We celebrate the funct
 - **Language**: [TypeScript 5.8](https://www.typescriptlang.org/) (ES2022 target, bundler module resolution)
 
 ### External CDN Dependencies
-
 Loaded via `index.html`, outside the npm dependency graph:
-
 - **[particles.js 2.0.0](https://vincentgarreau.com/particles.js/)**: Renders interactive particle backgrounds on the Home view (repulse on hover, push on click).
 - **[Google Material Symbols Outlined](https://fonts.google.com/icons)**: Variable-weight icon font used in the About page sidebar and capability grid.
 - **Google Fonts**: Space Grotesk and Inter are loaded via `@import` in `src/index.css`.
 
 ### Routing & View Management
-
 The application uses **hash-based routing** without external dependencies. `getViewFromHash()`, `getExperienceIdFromHash()`, and `getPlayIdFromHash()` functions in `App.tsx` map URL hashes to view states:
 
-| Hash               | View         | Description                        |
-| ------------------ | ------------ | ---------------------------------- |
-| `#/` (or empty)    | `HOME`       | Portfolio home page                |
-| `#/project`        | `PROJECT`    | Placeholder project detail page    |
+| Hash | View | Description |
+|---|---|---|
+| `#/` (or empty) | `HOME` | Portfolio home page |
+| `#/project` | `PROJECT` | Placeholder project detail page |
 | `#/experience/:id` | `EXPERIENCE` | Data-driven experience detail page |
-| `#/play/:id`       | `PLAY`       | Data-driven play-state detail page |
-| `#/lab`            | `LIBRARY`    | Component library                  |
-| `#/about`          | `ABOUT`      | About page                         |
+| `#/play/:id` | `PLAY` | Data-driven play-state detail page |
+| `#/lab` | `LIBRARY` | Component library |
+| `#/about` | `ABOUT` | About page |
 
 **Experience routes** use a dynamic `:id` segment parsed via regex. Valid IDs: `salesforce`, `roku`, `levis`, `apple`, `ssr-labs`. Each experience page chains to the next via a "Next Experience" transition (circular: Salesforce → Roku → Levi's → Apple → SSR Labs → Salesforce).
 
@@ -72,7 +64,6 @@ The application uses **hash-based routing** without external dependencies. `getV
 A `hashchange` event listener syncs React state with the URL, providing browser back/forward navigation and deep-linking support. Navigation and Footer components use `<a href="#/...">` elements instead of callback props, enabling Cmd+click and middle-click behavior. Non-route hashes (e.g., `#main-content` from skip links) are ignored by the router.
 
 ### Advanced CSS Techniques
-
 - **CSS Masks**: Leveraging `mask: linear-gradient` for complex feathering effects that are more performant than traditional opacity gradients.
 - **Backdrop Filters**: Extensive use of `backdrop-filter: blur()` to create glassmorphism effects that maintain readability over high-density content.
 - **Modern Tailwind Theming**: Utilizing the `@theme` block in Tailwind 4 for centralized, variable-driven design tokens. 15 semantic color tokens (`ink`, `ink-muted`, `ink-subtle`, `ink-faint`, `surface`, `surface-high`, `surface-lowest`, `surface-muted`, `outline-variant`, `accent`, `accent-hover`, `on-accent`, `contrast`, `on-contrast`, `on-contrast-muted`) plus font tokens (`--font-sans`, `--font-display`). All component colors reference these tokens — no hardcoded Tailwind color classes in application code.
@@ -83,7 +74,6 @@ A `hashchange` event listener syncs React state with the URL, providing browser 
 - **Touch Optimization**: `touch-action: manipulation` is applied globally to all interactive elements, eliminating the 300ms tap delay on mobile.
 
 ### Path Aliases
-
 The `@/*` alias resolves to the project root and is configured in both `tsconfig.json` and `vite.config.ts`.
 
 ---
@@ -91,57 +81,46 @@ The `@/*` alias resolves to the project root and is configured in both `tsconfig
 ## Local Environment Setup
 
 ### Prerequisites
-
 - **Node.js**: Version 18.0.0 or higher.
 - **npm**: Version 9.0.0 or higher.
 
 ### 1. Clone the Repository
-
 ```bash
 git clone <repository-url>
 cd linear-precision
 ```
 
 ### 2. Install Dependencies
-
 ```bash
 npm install
 ```
 
 ### 3. Start the Development Server
-
 ```bash
 npm run dev
 ```
-
 The application will be available at `http://localhost:3000`. No environment variables or API keys are required.
 
 ### 4. Build for Production
-
 ```bash
 npm run build
 ```
 
 ### 5. Preview Production Build
-
 ```bash
 npm run preview
 ```
 
 ### 6. Type-Check (Lint)
-
 ```bash
 npm run lint
 ```
-
 Runs `tsc --noEmit` for type-only validation without emitting JS.
 
 ### 7. Clean Build Artifacts
-
 ```bash
 npm run clean
 ```
-
 Removes the `dist/` directory.
 
 ---
@@ -197,45 +176,45 @@ linear-precision/
 
 ## Pages
 
-| Page                 | Route              | View Key     | Description                                                                                                                                                                                                                                                                                                                |
-| -------------------- | ------------------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Home**             | `#/`               | `HOME`       | Hero with particles.js background and flip-text animation, selected artifacts grid (4 experiences: Salesforce, Roku, Levi Strauss, Apple), archival records (4 play-state entries), component specs, asymmetric detail section, manifesto, and technical capabilities.                                                     |
-| **ProjectDetail**    | `#/project`        | `PROJECT`    | Scroll-aware header that expands to show project title once the hero scrolls out of view. Includes image stacking, `TechnicalGrid`, `BentoGrid`, and a "next project" transition.                                                                                                                                          |
-| **ExperienceDetail** | `#/experience/:id` | `EXPERIENCE` | Data-driven experience page. Accepts `experienceId` prop, renders role-specific hero, two image+content sections, a 3-column tech stack grid (dark bg), `BentoGrid`, and a "next experience" transition. Content sourced from `src/data/experiences.ts`.                                                                   |
-| **PlayState**        | `#/play/:id`       | `PLAY`       | Data-driven play-state page for "Outside of Work" activities. Scroll-aware header, hero with tags, inline technical grid driven by per-play data, dynamic terminal panel layouts with optional facade-pattern social embeds (Instagram / YouTube), and a "next play" transition. Content sourced from `src/data/plays.ts`. |
-| **ComponentLibrary** | `#/lab`            | `LIBRARY`    | Catalogues reusable components (Manifesto, ArtifactCard, RecordCard, TechnicalGrid, BentoGrid) with full-width previews, centered descriptions, and an isolated full-view mode.                                                                                                                                            |
-| **About**            | `#/about`          | `ABOUT`      | Desktop-only fixed sidebar with task-based navigation. Career narrative ("The Arc"), capabilities grid (Design Systems, Frontend Engineering, Accessibility, Cross-Functional Delivery), and design approach section.                                                                                                      |
+| Page | Route | View Key | Description |
+|---|---|---|---|
+| **Home** | `#/` | `HOME` | Hero with particles.js background and flip-text animation, selected artifacts grid (4 experiences: Salesforce, Roku, Levi Strauss, Apple), archival records (4 play-state entries), component specs, asymmetric detail section, manifesto, and technical capabilities. |
+| **ProjectDetail** | `#/project` | `PROJECT` | Scroll-aware header that expands to show project title once the hero scrolls out of view. Includes image stacking, `TechnicalGrid`, `BentoGrid`, and a "next project" transition. |
+| **ExperienceDetail** | `#/experience/:id` | `EXPERIENCE` | Data-driven experience page. Accepts `experienceId` prop, renders role-specific hero, two image+content sections, a 3-column tech stack grid (dark bg), `BentoGrid`, and a "next experience" transition. Content sourced from `src/data/experiences.ts`. |
+| **PlayState** | `#/play/:id` | `PLAY` | Data-driven play-state page for "Outside of Work" activities. Scroll-aware header, hero with tags, inline technical grid driven by per-play data, dynamic terminal panel layouts with optional facade-pattern social embeds (Instagram / YouTube), and a "next play" transition. Content sourced from `src/data/plays.ts`. |
+| **ComponentLibrary** | `#/lab` | `LIBRARY` | Catalogues reusable components (Manifesto, ArtifactCard, RecordCard, TechnicalGrid, BentoGrid) with full-width previews, centered descriptions, and an isolated full-view mode. |
+| **About** | `#/about` | `ABOUT` | Desktop-only fixed sidebar with task-based navigation. Career narrative ("The Arc"), capabilities grid (Design Systems, Frontend Engineering, Accessibility, Cross-Functional Delivery), and design approach section. |
 
 ---
 
 ## Data Files
 
-| File                      | Description                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `src/data/images.ts`      | Centralized `IMAGES` constant with local image imports (`salesforceTower`, `roku`, `leviStrauss`, `apple`) and remote placeholder URLs. Used across `ArtifactCard`s and detail pages.                                                                                                                                                                                                                                    |
-| `src/data/experiences.ts` | Typed `Experience[]` array with structured content for 5 roles: company, role, dates, description, tags, two content sections (title + text + image), tech stack groups, bento image, and next-experience link. Exports `getExperienceById()` lookup.                                                                                                                                                                    |
-| `src/data/plays.ts`       | Typed `Play[]` array with structured content for 4 play-state entries. Each entry includes: id, title, category, year, description, tags, side label, image, `techGrid` (architecture items + terminal data), `terminalLayout` variant, next-play link, and optional `instagramPosts` / `youtubeVideos` arrays (`EmbedItem[]` with `id`, `thumbnail`, `label`). Exports `getPlayById()` lookup and the `EmbedItem` type. |
-| `public/resume.html`      | Standalone HTML resume with embedded CSS. Print-optimized for single-page A4 output. Responsive breakpoints for tablet (≤768px) and mobile (≤480px). Includes a floating download button that triggers `window.print()` for PDF export. Contact links styled in `#1a56db` blue.                                                                                                                                          |
+| File | Description |
+|---|---|
+| `src/data/images.ts` | Centralized `IMAGES` constant with local image imports (`salesforceTower`, `roku`, `leviStrauss`, `apple`) and remote placeholder URLs. Used across `ArtifactCard`s and detail pages. |
+| `src/data/experiences.ts` | Typed `Experience[]` array with structured content for 5 roles: company, role, dates, description, tags, two content sections (title + text + image), tech stack groups, bento image, and next-experience link. Exports `getExperienceById()` lookup. |
+| `src/data/plays.ts` | Typed `Play[]` array with structured content for 4 play-state entries. Each entry includes: id, title, category, year, description, tags, side label, image, `techGrid` (architecture items + terminal data), `terminalLayout` variant, next-play link, and optional `instagramPosts` / `youtubeVideos` arrays (`EmbedItem[]` with `id`, `thumbnail`, `label`). Exports `getPlayById()` lookup and the `EmbedItem` type. |
+| `public/resume.html` | Standalone HTML resume with embedded CSS. Print-optimized for single-page A4 output. Responsive breakpoints for tablet (≤768px) and mobile (≤480px). Includes a floating download button that triggers `window.print()` for PDF export. Contact links styled in `#1a56db` blue. |
 
 ---
 
 ## Components
 
-| Component            | Props                     | Key Behavior                                                                                                                                                                                                            |
-| -------------------- | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ArtifactCard`       | `ArtifactCardProps`       | Configurable `aspect` ratio, full overlay on hover revealing project/role/year metadata. Dark mode: amber accent bg with black text.                                                                                    |
-| `RecordCard`         | `RecordCardProps`         | Grayscale + brightness filters on idle; `translate-y-full` slide-up reveal with custom easing `[0.16,1,0.3,1]`. Dark mode: amber accent bg with black text.                                                             |
-| `BentoGrid`          | `BentoGridProps`          | 4-col × 2-row asymmetric grid; accepts a `circuitImage` prop for the hero cell.                                                                                                                                         |
-| `TechnicalGrid`      | _(none)_                  | Self-contained dark section; displays architectural principles and a terminal-style status block.                                                                                                                       |
-| `GrainOverlay`       | _(none)_                  | Renders an inline SVG fractal noise texture at `opacity: 0.03`, fixed at `z-index: 70`.                                                                                                                                 |
-| `Manifesto`          | _(none)_                  | Sticky left column with scrolling right-column principles (Reduction, Precision, Honesty).                                                                                                                              |
-| `Navigation`         | `NavigationProps`         | Three nav items (HOME, LIBRARY, LINKEDIN) with hash-based routing, active-state underline, brand link to `#/`, `ThemeToggle`, and RESUME CTA linking to `/resume.html`. `activeItem` prop controls the underlined item. |
-| `ThemeToggle`        | _(none)_                  | Self-contained dark mode switch (Sun/Moon icon, `role="switch"`, `aria-checked`). Manages `.dark` class, `localStorage`, `<meta name="theme-color">`, and dispatches a `themechange` CustomEvent.                       |
-| `Footer`             | _(none)_                  | Centered internal `<a>` links (HOME, LIBRARY) with hash routing. No external links.                                                                                                                                     |
-| `FloatingMailButton` | `FloatingMailButtonProps` | Fixed-position email CTA. Accepts optional `href`. Currently extracted as a standalone component but not rendered in any view.                                                                                          |
-| `AsymmetricDetail`   | —                         | Two-column asymmetric layout used on the Home page for featured content.                                                                                                                                                |
-| `SpecCard`           | —                         | Small specification/stat card used in the Home page spec grid.                                                                                                                                                          |
-| `Watermark`          | —                         | Decorative watermark element.                                                                                                                                                                                           |
+| Component | Props | Key Behavior |
+|---|---|---|
+| `ArtifactCard` | `ArtifactCardProps` | Configurable `aspect` ratio, full overlay on hover revealing project/role/year metadata. Dark mode: amber accent bg with black text. |
+| `RecordCard` | `RecordCardProps` | Grayscale + brightness filters on idle; `translate-y-full` slide-up reveal with custom easing `[0.16,1,0.3,1]`. Dark mode: amber accent bg with black text. |
+| `BentoGrid` | `BentoGridProps` | 4-col × 2-row asymmetric grid; accepts a `circuitImage` prop for the hero cell. |
+| `TechnicalGrid` | _(none)_ | Self-contained dark section; displays architectural principles and a terminal-style status block. |
+| `GrainOverlay` | _(none)_ | Renders an inline SVG fractal noise texture at `opacity: 0.03`, fixed at `z-index: 70`. |
+| `Manifesto` | _(none)_ | Sticky left column with scrolling right-column principles (Reduction, Precision, Honesty). |
+| `Navigation` | `NavigationProps` | Three nav items (HOME, LIBRARY, LINKEDIN) with hash-based routing, active-state underline, brand link to `#/`, `ThemeToggle`, and RESUME CTA linking to `/resume.html`. `activeItem` prop controls the underlined item. |
+| `ThemeToggle` | _(none)_ | Self-contained dark mode switch (Sun/Moon icon, `role="switch"`, `aria-checked`). Manages `.dark` class, `localStorage`, `<meta name="theme-color">`, and dispatches a `themechange` CustomEvent. |
+| `Footer` | _(none)_ | Centered internal `<a>` links (HOME, LIBRARY) with hash routing. No external links. |
+| `FloatingMailButton` | `FloatingMailButtonProps` | Fixed-position email CTA. Accepts optional `href`. Currently extracted as a standalone component but not rendered in any view. |
+| `AsymmetricDetail` | — | Two-column asymmetric layout used on the Home page for featured content. |
+| `SpecCard` | — | Small specification/stat card used in the Home page spec grid. |
+| `Watermark` | — | Decorative watermark element. |
 
 ---
 
@@ -243,18 +222,17 @@ linear-precision/
 
 The `PlayState` page renders a dynamic terminal panel whose layout varies per play entry, controlled by the `terminalLayout` field on each `Play` object:
 
-| Layout     | Plays                   | Description                                                                                                                                                                                                                                                                   |
-| ---------- | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Layout | Plays | Description |
+|---|---|---|
 | `grid-2x2` | NASM CPT, Guitar Covers | Four cells in a 2×2 grid. When social embed data exists (`instagramPosts` or `youtubeVideos`), renders facade-pattern embeds (static thumbnail + play button; iframe loads only on user click). Otherwise falls back to terminal metadata cells (icon + status + data lines). |
-| `bento`    | Creative Jam            | Asymmetric 4-column × 2-row grid. Left half: tall terminal panel spanning both rows with status and decorative scan lines. Top-right: play title + description. Bottom-right splits into an icon cell (DraftingCompass with hover scale) and an index/output cell.            |
-| `single`   | Improv                  | Single full-width panel with Terminal icon, status, decorative scan lines, and all terminal lines rendered together. Clean and minimal.                                                                                                                                       |
+| `bento` | Creative Jam | Asymmetric 4-column × 2-row grid. Left half: tall terminal panel spanning both rows with status and decorative scan lines. Top-right: play title + description. Bottom-right splits into an icon cell (DraftingCompass with hover scale) and an index/output cell. |
+| `single` | Improv | Single full-width panel with Terminal icon, status, decorative scan lines, and all terminal lines rendered together. Clean and minimal. |
 
 ### Social Embed Facade Pattern
 
 Play-state entries can optionally include `instagramPosts` or `youtubeVideos` arrays (typed as `EmbedItem[]` with `id`, `thumbnail`, and `label` fields). When present, the `grid-2x2` terminal panel renders an `EmbedFacade` component instead of the default terminal cells.
 
 **How it works:**
-
 1. **Before click**: A static thumbnail image is shown with a `play_circle` icon overlay. The element is an `<a>` tag linking to the original post/video URL, so it functions as a standard link if JS is unavailable.
 2. **On click**: The `<a>` is replaced by an `<iframe>` that loads the embed (Instagram via `instagram.com/p/{id}/embed/`, YouTube via `youtube-nocookie.com/embed/{id}`).
 
