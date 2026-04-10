@@ -38,7 +38,7 @@ export interface Play {
 export const PLAYS: Play[] = [
   {
     id: "nasm-cpt",
-    index: "05",
+    index: "04",
     title: "NASM CPT",
     category: "Fitness",
     year: "2022",
@@ -73,15 +73,31 @@ export const PLAYS: Play[] = [
     prev: { id: "improv", name: "Improv" },
     next: { id: "guitar-covers", name: "Guitar Covers" },
     instagramPosts: [
-      { id: "PLACEHOLDER_1", thumbnail: IMAGES.nasm, label: "Training session — progressive overload" },
-      { id: "PLACEHOLDER_2", thumbnail: IMAGES.nasm, label: "OPT model periodization cycle" },
-      { id: "PLACEHOLDER_3", thumbnail: IMAGES.nasm, label: "Strength programming breakdown" },
-      { id: "PLACEHOLDER_4", thumbnail: IMAGES.nasm, label: "Hypertrophy phase results" },
+      {
+        id: "PLACEHOLDER_1",
+        thumbnail: IMAGES.nasm,
+        label: "Training session — progressive overload",
+      },
+      {
+        id: "PLACEHOLDER_2",
+        thumbnail: IMAGES.nasm,
+        label: "OPT model periodization cycle",
+      },
+      {
+        id: "PLACEHOLDER_3",
+        thumbnail: IMAGES.nasm,
+        label: "Strength programming breakdown",
+      },
+      {
+        id: "PLACEHOLDER_4",
+        thumbnail: IMAGES.nasm,
+        label: "Hypertrophy phase results",
+      },
     ],
   },
   {
     id: "guitar-covers",
-    index: "06",
+    index: "05",
     title: "Guitar Covers",
     category: "Music",
     year: "2024",
@@ -116,15 +132,31 @@ export const PLAYS: Play[] = [
     prev: { id: "nasm-cpt", name: "NASM CPT" },
     next: { id: "creative-jam", name: "Creative Jam" },
     youtubeVideos: [
-      { id: "Ll88xYR-tVU", thumbnail: "https://img.youtube.com/vi/Ll88xYR-tVU/hqdefault.jpg", label: "Guitar cover — Session 1" },
-      { id: "l40EzSbQBK8", thumbnail: "https://img.youtube.com/vi/l40EzSbQBK8/hqdefault.jpg", label: "Guitar cover — Session 2" },
-      { id: "FxwgQgmlSNY", thumbnail: "https://img.youtube.com/vi/FxwgQgmlSNY/hqdefault.jpg", label: "Guitar cover — Session 3" },
-      { id: "SzoL3bFaODY", thumbnail: "https://img.youtube.com/vi/SzoL3bFaODY/hqdefault.jpg", label: "Guitar cover — Session 4" },
+      {
+        id: "Ll88xYR-tVU",
+        thumbnail: "https://img.youtube.com/vi/Ll88xYR-tVU/hqdefault.jpg",
+        label: "Guitar cover — Session 1",
+      },
+      {
+        id: "l40EzSbQBK8",
+        thumbnail: "https://img.youtube.com/vi/l40EzSbQBK8/hqdefault.jpg",
+        label: "Guitar cover — Session 2",
+      },
+      {
+        id: "FxwgQgmlSNY",
+        thumbnail: "https://img.youtube.com/vi/FxwgQgmlSNY/hqdefault.jpg",
+        label: "Guitar cover — Session 3",
+      },
+      {
+        id: "SzoL3bFaODY",
+        thumbnail: "https://img.youtube.com/vi/SzoL3bFaODY/hqdefault.jpg",
+        label: "Guitar cover — Session 4",
+      },
     ],
   },
   {
     id: "creative-jam",
-    index: "07",
+    index: "06",
     title: "Adobe Creative Jam",
     category: "Design Hackathon",
     year: "2024",
@@ -158,11 +190,15 @@ export const PLAYS: Play[] = [
     terminalLayout: "bento",
     prev: { id: "guitar-covers", name: "Guitar Covers" },
     next: { id: "improv", name: "Improv" },
-    bentoImages: { hero: IMAGES.cjHero, cell1: IMAGES.cjEvent1, cell2: IMAGES.cjEvent2 },
+    bentoImages: {
+      hero: IMAGES.cjHero,
+      cell1: IMAGES.cjEvent1,
+      cell2: IMAGES.cjEvent2,
+    },
   },
   {
     id: "improv",
-    index: "08",
+    index: "07",
     title: "Improv",
     category: "Public Speaking",
     year: "2024",
@@ -176,7 +212,7 @@ export const PLAYS: Play[] = [
         {
           label: "Discipline // 01",
           title: "Spontaneous Performance",
-          text: "Training the instinct to build on what's given rather than planning ahead — \"Yes, and\" as a design philosophy for real-time creative decisions.",
+          text: 'Training the instinct to build on what\'s given rather than planning ahead — "Yes, and" as a design philosophy for real-time creative decisions.',
         },
         {
           label: "Discipline // 02",

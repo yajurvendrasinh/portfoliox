@@ -45,10 +45,10 @@ function getViewFromHash(): View {
 // Hero flip animation — each entry is a [topWord, bottomWord] pair that the h1 cycles through
 // Only one word changes per step, so only that slot flips while the other stays static
 const HERO_SEQUENCE: [string, string][] = [
-  ["UX",     "ENGINEER"],
-  ["UX",     "DESIGNER"],
-  ["UI",     "DESIGNER"],
-  ["UI",     "ENGINEER"],
+  ["UX", "ENGINEER"],
+  ["UX", "DESIGNER"],
+  ["UI", "DESIGNER"],
+  ["UI", "ENGINEER"],
   ["DESIGN", "ENGINEER"],
 ];
 
@@ -59,7 +59,15 @@ const FLIP_INTERVAL_MS = 2500;
 // Container clips both words with overflow:hidden; popLayout keeps them stacked during the crossover
 function FlipWord({ word }: { word: string }) {
   return (
-    <span style={{ display: "inline-block", position: "relative", verticalAlign: "bottom", overflow: "hidden", minWidth: "6.5ch" }}>
+    <span
+      style={{
+        display: "inline-block",
+        position: "relative",
+        verticalAlign: "bottom",
+        overflow: "hidden",
+        minWidth: "6.5ch",
+      }}
+    >
       <AnimatePresence mode="popLayout">
         <motion.span
           key={word}
@@ -105,7 +113,7 @@ export default function App() {
   useEffect(() => {
     const id = setInterval(
       () => setHeroStep((s) => (s + 1) % HERO_SEQUENCE.length),
-      FLIP_INTERVAL_MS
+      FLIP_INTERVAL_MS,
     );
     return () => clearInterval(id);
   }, []);
@@ -128,13 +136,18 @@ export default function App() {
   }, [view, experienceId, playId]);
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     if (prefersReducedMotion) return;
 
     // Particle color adapts to theme — black in light mode, amber accent in dark mode
     const particleColor = theme === "dark" ? "#fca311" : "#000000";
 
-    if ((window as any).particlesJS && document.getElementById("particles-js")) {
+    if (
+      (window as any).particlesJS &&
+      document.getElementById("particles-js")
+    ) {
       (window as any).particlesJS("particles-js", {
         particles: {
           number: { value: 80, density: { enable: true, value_area: 800 } },
@@ -181,7 +194,13 @@ export default function App() {
           },
           modes: {
             grab: { distance: 400, line_linked: { opacity: 1 } },
-            bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 3,
+            },
             repulse: { distance: 200, duration: 0.4 },
             push: { particles_nb: 4 },
             remove: { particles_nb: 2 },
@@ -222,19 +241,22 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen selection:bg-accent selection:text-on-accent">
-      <a href="#main-content" className="skip-link">Skip to content</a>
+      <a href="#main-content" className="skip-link">
+        Skip to content
+      </a>
       <GrainOverlay />
 
       {/* Navigation */}
       <header className="fixed top-0 w-full z-50 bg-surface-lowest/70 backdrop-blur-md h-[calc(4rem_+_var(--sat))] pt-[var(--sat)] border-b border-outline-variant">
-        <div className="max-w-7xl mx-auto h-16">
-          <Navigation activeItem="HOME" />
-        </div>
+        <Navigation activeItem="HOME" />
       </header>
 
       {/* Hero Section */}
       <section className="sticky top-0 h-screen flex flex-col justify-center px-6 md:px-12 bg-surface overflow-hidden z-10 relative">
-        <div id="particles-js" className="absolute inset-0 z-0 pointer-events-none opacity-50" />
+        <div
+          id="particles-js"
+          className="absolute inset-0 z-0 pointer-events-none opacity-50"
+        />
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-0 z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -248,10 +270,12 @@ export default function App() {
               <FlipWord word={bottomWord} />
             </h1>
             <p className="text-lg md:text-xl text-ink-muted max-w-xl leading-relaxed font-light">
-              who cares deeply about accessible, aesthetic and equitable design. Thriving at intersection of code and design connecting technology with human experience in a way that feels intentional, intuitive and inspiring.
+              who cares deeply about accessible, aesthetic and equitable design.
+              Thriving at intersection of code and design connecting technology
+              with human experience in a way that feels intentional, intuitive
+              and inspiring.
             </p>
           </motion.div>
-
         </div>
         <ScrollHint />
       </section>
@@ -259,9 +283,14 @@ export default function App() {
       {/* Main Content */}
       <main id="main-content" className="bg-surface relative z-20 pt-24 pb-32">
         {/* Selected Artifacts */}
-        <section id="work" className="px-6 md:px-12 max-w-7xl mx-auto relative artifacts-fade">
+        <section
+          id="work"
+          className="px-6 md:px-12 max-w-7xl mx-auto relative artifacts-fade"
+        >
           <div className="flex items-baseline justify-between border-b-[0.5px] border-outline-variant pb-4 mb-20">
-            <h2 className="font-display text-3xl font-bold tracking-tight uppercase">State of Work</h2>
+            <h2 className="font-display text-3xl font-bold tracking-tight uppercase">
+              State of Work
+            </h2>
           </div>
 
           <div className="grid grid-cols-12 gap-y-24 md:gap-x-12">
@@ -275,7 +304,9 @@ export default function App() {
               role="Sr. Software Engineer — Frontend"
               year="2024"
               aspect="aspect-[4/5]"
-              onClick={() => { window.location.hash = "#/experience/salesforce"; }}
+              onClick={() => {
+                window.location.hash = "#/experience/salesforce";
+              }}
             />
             <div className="col-span-12 md:col-span-5 flex flex-col gap-y-24 md:gap-y-0 md:justify-between">
               {/* Roku */}
@@ -287,7 +318,9 @@ export default function App() {
                 role="Sr. Software Engineer — Frontend"
                 year="2021"
                 aspect="aspect-[4/3]"
-                onClick={() => { window.location.hash = "#/experience/roku"; }}
+                onClick={() => {
+                  window.location.hash = "#/experience/roku";
+                }}
               />
               {/* Levi Strauss & Co. */}
               <ArtifactCard
@@ -298,23 +331,62 @@ export default function App() {
                 role="Front End Web Developer"
                 year="2017"
                 aspect="aspect-[4/3]"
-                onClick={() => { window.location.hash = "#/experience/levis"; }}
+                onClick={() => {
+                  window.location.hash = "#/experience/levis";
+                }}
               />
             </div>
-            
           </div>
         </section>
 
         {/* PLAY */}
         <section className="mt-48 px-6 md:px-12 max-w-7xl mx-auto">
           <div className="flex items-baseline justify-between border-b-[0.5px] border-outline-variant pb-4 mb-20">
-            <h2 className="font-display text-3xl font-bold tracking-tight uppercase">State of Play</h2>
+            <h2 className="font-display text-3xl font-bold tracking-tight uppercase">
+              State of Play
+            </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <RecordCard image={IMAGES.nasm} title="NASM CPT" category="Fitness" year="2022" index="005" onClick={() => { window.location.hash = "#/play/nasm-cpt"; }} />
-            <RecordCard image={IMAGES.guitar} title="Guitar Covers" category="Music" year="2023" index="006" onClick={() => { window.location.hash = "#/play/guitar-covers"; }} />
-            <RecordCard image={IMAGES.creativeJam} title="Adobe Creative Jam" category="Design Hackathon" year="2026" index="007" onClick={() => { window.location.hash = "#/play/creative-jam"; }} />
-            <RecordCard image={IMAGES.improv} title="Improv" category="Public Speaking" year="2021" index="008" onClick={() => { window.location.hash = "#/play/improv"; }} />
+            <RecordCard
+              image={IMAGES.nasm}
+              title="NASM CPT"
+              category="Fitness"
+              year="2022"
+              index="005"
+              onClick={() => {
+                window.location.hash = "#/play/nasm-cpt";
+              }}
+            />
+            <RecordCard
+              image={IMAGES.guitar}
+              title="Guitar Covers"
+              category="Music"
+              year="2023"
+              index="006"
+              onClick={() => {
+                window.location.hash = "#/play/guitar-covers";
+              }}
+            />
+            <RecordCard
+              image={IMAGES.creativeJam}
+              title="Adobe Creative Jam"
+              category="Design Hackathon"
+              year="2026"
+              index="007"
+              onClick={() => {
+                window.location.hash = "#/play/creative-jam";
+              }}
+            />
+            <RecordCard
+              image={IMAGES.improv}
+              title="Improv"
+              category="Public Speaking"
+              year="2021"
+              index="008"
+              onClick={() => {
+                window.location.hash = "#/play/improv";
+              }}
+            />
           </div>
         </section>
       </main>
