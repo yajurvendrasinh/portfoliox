@@ -46,7 +46,7 @@ export const EXPERIENCES: Experience[] = [
     year: "2024",
     description:
       "Evangelized design system adoption and accessibility-first component architecture across Salesforce's Tableau Next ecosystem.",
-    tags: ["Design Evangelism", "Design Tokens", "Accessibility", "Figma"],
+    tags: ["Lightning Design System - SLDS 2", "Design Tokens", "Accessibility", "Figma"],
     sideLabel: "SALESFORCE_COSMOS_DS",
     sections: {
       primary: {
@@ -61,12 +61,13 @@ export const EXPERIENCES: Experience[] = [
       },
     },
     manifesto: {
-      label: "Salesforce / Tableau Next",
-      title: "Design System",
+      label: "Tableau Next",
+      title: "Agentic Design System",
       items: [
-        { id: "01 / ADOPTION", text: "Drove COSMOS Design System adoption across Tableau Next — translating enterprise component standards into usage patterns, migration guides, and hands-on enablement that aligned 3+ product teams on a unified design language." },
-        { id: "02 / CRAFT", text: "Designed reusable product UI end-to-end — Unified Filters, Data Pickers, Operator Panels — from Figma prototypes through production LWC with TypeScript, maintaining design fidelity across the handoff." },
-        { id: "03 / INCLUSION", text: "Embedded WCAG 2.1 accessibility as a design constraint, not a retrofit. ARIA roles, keyboard navigation, and screen reader support designed into every component from the start." },
+        { id: "BACKGROUND", text: "Salesforce Lightning Design System 2 (SLDS 2), is a complete design framework that is used to create consistent, accessible, and scalable user interfaces." },
+        { id: "MY ROLE", text: "Drove COSMOS Design System adoption across Tableau Next — translating enterprise component standards into usage patterns, migration guides, and hands-on enablement that aligned 3+ product teams on a unified design language." },
+        { id: "02 / WHY", text: "Designed reusable product UI end-to-end — Unified Filters, Data Pickers, Operator Panels — from Figma prototypes through production LWC with TypeScript, maintaining design fidelity across the handoff." },
+        { id: "03 / HOW", text: "Embedded WCAG 2.1 accessibility as a design constraint, not a retrofit. ARIA roles, keyboard navigation, and screen reader support designed into every component from the start." },
       ],
     },
     techStack: [

@@ -255,7 +255,7 @@ export default function App() {
       <section className="sticky top-0 h-screen flex flex-col justify-center px-6 md:px-12 bg-surface overflow-hidden z-10 relative">
         <div
           id="particles-js"
-          className="absolute inset-0 z-0 pointer-events-none opacity-50"
+          className="absolute inset-0 z-0 pointer-events-none opacity-80"
         />
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-0 z-10">
           <motion.div
@@ -282,10 +282,41 @@ export default function App() {
 
       {/* Main Content */}
       <main id="main-content" className="bg-surface relative z-20 pt-24 pb-32">
+        {/* Feature Showcase */}
+        <section className="px-6 md:px-12 max-w-7xl mx-auto relative artifacts-fade">
+          <div className="flex items-baseline justify-between border-b-[0.5px] border-outline-variant pb-4 mb-20">
+            <h2 className="font-display text-3xl font-bold tracking-tight uppercase">
+              Feature Showcase
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <RecordCard
+              image={IMAGES.wellness}
+              title="Wellness Platform"
+              category="Health &amp; Fitness"
+              year="2025"
+              index="001"
+              onClick={() => {
+                window.open("https://yajurvendrasinh.github.io/wellness-platform/workout", "_blank");
+              }}
+            />
+            <RecordCard
+              image={IMAGES.breathe}
+              title="Breathe"
+              category="Mindfulness"
+              year="2025"
+              index="002"
+              onClick={() => {
+                window.open("https://yajurvendrasinh.github.io/breathe", "_blank");
+              }}
+            />
+          </div>
+        </section>
+
         {/* Selected Artifacts */}
         <section
           id="work"
-          className="px-6 md:px-12 max-w-7xl mx-auto relative artifacts-fade"
+          className="mt-36 px-6 md:px-12 max-w-7xl mx-auto relative"
         >
           <div className="flex items-baseline justify-between border-b-[0.5px] border-outline-variant pb-4 mb-20">
             <h2 className="font-display text-3xl font-bold tracking-tight uppercase">
@@ -296,51 +327,51 @@ export default function App() {
           <div className="grid grid-cols-12 gap-y-24 md:gap-x-12">
             {/* Salesforce */}
             <ArtifactCard
-              className="col-span-12 md:col-span-7"
+              className="col-span-12 md:col-span-4"
               image={IMAGES.salesforceTower}
               title="Salesforce"
               category="Design Systems / Accessibility"
               project="Tableau Next — COSMOS DS"
               role="Sr. Software Engineer — Frontend"
               year="2024"
-              aspect="aspect-[4/5]"
+              aspect="aspect-square"
               onClick={() => {
                 window.location.hash = "#/experience/salesforce";
               }}
             />
-            <div className="col-span-12 md:col-span-5 flex flex-col gap-y-24 md:gap-y-0 md:justify-between">
-              {/* Roku */}
-              <ArtifactCard
-                image={IMAGES.roku}
-                title="Roku Inc."
-                category="Component Library / UX Engineering"
-                project="Roku Web Platform"
-                role="Sr. Software Engineer — Frontend"
-                year="2021"
-                aspect="aspect-[4/3]"
-                onClick={() => {
-                  window.location.hash = "#/experience/roku";
-                }}
-              />
-              {/* Levi Strauss & Co. */}
-              <ArtifactCard
-                image={IMAGES.leviStrauss}
-                title="Levi Strauss & Co."
-                category="E-commerce / Headless CMS"
-                project="Levi.com & Dockers.com"
-                role="Front End Web Developer"
-                year="2017"
-                aspect="aspect-[4/3]"
-                onClick={() => {
-                  window.location.hash = "#/experience/levis";
-                }}
-              />
-            </div>
+            {/* Roku */}
+            <ArtifactCard
+              className="col-span-12 md:col-span-4"
+              image={IMAGES.roku}
+              title="Roku Inc."
+              category="Component Library / UX Engineering"
+              project="Roku Web Platform"
+              role="Sr. Software Engineer — Frontend"
+              year="2021"
+              aspect="aspect-square"
+              onClick={() => {
+                window.location.hash = "#/experience/roku";
+              }}
+            />
+            {/* Levi Strauss & Co. */}
+            <ArtifactCard
+              className="col-span-12 md:col-span-4"
+              image={IMAGES.leviStrauss}
+              title="Levi Strauss & Co."
+              category="E-commerce / Headless CMS"
+              project="Levi.com & Dockers.com"
+              role="Front End Web Developer"
+              year="2017"
+              aspect="aspect-square"
+              onClick={() => {
+                window.location.hash = "#/experience/levis";
+              }}
+            />
           </div>
         </section>
 
         {/* PLAY */}
-        <section className="mt-48 px-6 md:px-12 max-w-7xl mx-auto">
+        <section className="mt-36 px-6 md:px-12 max-w-7xl mx-auto">
           <div className="flex items-baseline justify-between border-b-[0.5px] border-outline-variant pb-4 mb-20">
             <h2 className="font-display text-3xl font-bold tracking-tight uppercase">
               State of Play

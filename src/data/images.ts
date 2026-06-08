@@ -22,8 +22,12 @@ import rokuOfferModal from "./images/roku/Roku_offer_modal.png";
 import cjHero from "./images/creative_jam/cj_1.jpg";
 import cjEvent1 from "./images/creative_jam/_DSC0718.jpg";
 import cjEvent2 from "./images/creative_jam/cj_2.jpeg";
+import breathe from "./images/breathe.png";
+import wellness from "./images/wellness.png";
 
 export const IMAGES = {
+  wellness,
+  breathe,
   salesforceTower,
   roku,
   leviStrauss,

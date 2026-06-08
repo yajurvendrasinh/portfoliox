@@ -25,7 +25,7 @@ export default function RecordCard({ image, title, category, year, index, onClic
           height={450}
           referrerPolicy="no-referrer"
           loading="lazy"
-          className="w-full h-full object-cover grayscale brightness-75 transition-[filter] duration-700 group-hover:grayscale-0 group-hover:brightness-100"
+          className="w-full h-full object-cover brightness-75 transition-[filter] duration-700 group-hover:grayscale-0 group-hover:brightness-100"
         />
       ) : (
         <div className="w-full h-full flex flex-col items-center justify-center gap-3">

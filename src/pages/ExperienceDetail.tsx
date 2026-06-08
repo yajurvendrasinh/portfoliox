@@ -120,6 +120,9 @@ export default function ExperienceDetail({ experienceId }: ExperienceDetailProps
         </section>
 
         {/* Role Focus + Technical Environment */}
+        {/* <BentoGrid circuitImage={experience.bentoImage} /> */}
+
+        {/* Role Focus + Technical Environment */}
         <section className="bg-contrast py-32 px-6 md:px-12 text-on-contrast overflow-hidden relative">
           <div className="max-w-7xl mx-auto">
             <div className="mb-20 flex items-baseline justify-between border-b-[0.5px] border-on-contrast/20 pb-4">
@@ -162,8 +165,6 @@ export default function ExperienceDetail({ experienceId }: ExperienceDetailProps
             </div>
           </div>
         </section>
-
-        {/* <BentoGrid circuitImage={experience.bentoImage} /> */}
 
         {/* Prev / Next Experience Navigation */}
         <section className="relative bg-surface-muted flex flex-col md:flex-row overflow-hidden border-t-[0.5px] border-outline-variant">
