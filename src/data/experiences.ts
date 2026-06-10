@@ -152,7 +152,7 @@ export const EXPERIENCES: Experience[] = [
       label: "Levi's Strauss & Co.",
       title: "Levi's Global Ecommerce",
       items: [
-        { id: "OVERVIEW", text: "Defined two generations of design language and modular component library for Levi.com and Dockers.com — building component library for marketing and branding  into a scalable headless frontend ui components that maintained fidelity across global markets, browsers, and devices." },
+        { id: "OVERVIEW", text: "Levi's not only wanted to build a memorable online shopping experience but also uplift the brand identity while provideing the consumers experience of being a Levi's Family. Building online web presence and spearheading the design language for sister brands was one of the crucial part of the puzzle." },
         { id: "CHALLENGE", text: "Defined two generations of design language and modular component library for Levi.com and Dockers.com — translating Figma and Zeplin into a scalable headless frontend that maintained fidelity across global markets, browsers, and devices." },
         { id: "MY ROLE", text: "Bulding and brainstorming UX flows, UI Component and accessibility guidelines for components to be utilized on homepage, marketing campaign pages and product landing pages. " },
         { id: "RESULTS", text: "Delivered responsive, accessible, internationalized, and SEO compliant global ecommerce platfrom — while coordinating with regional teams to serve worldwide needs across multi-market launches." },
