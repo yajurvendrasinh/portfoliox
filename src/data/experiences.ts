@@ -108,8 +108,8 @@ export const EXPERIENCES: Experience[] = [
       label: "Roku",
       title: "User Onboarding Experience",
       items: [
-        { id: "OVERVIEW", text: "ROKU's onboarding experience is one of the highest velocity touch points for consumer and requires cohesieve and smoother user experience" },
-        { id: "CHALLENGE", text: "There was a requirement to have unison library of components that can be utilized and re-utilized across different brands and offereings such as ROKU channel store, ROKU offers and ROKU User Account" },
+        { id: "OVERVIEW", text: "ROKU's onboarding experience is one of the highest velocity touch points for consumer and requires cohesive and smoother user experience" },
+        { id: "CHALLENGE", text: "There was a requirement to have unison library of components that can be utilized and re-utilized across different brands and offerings such as ROKU channel store, ROKU offers and ROKU User Account" },
         { id: "MY ROLE", text: "Owned the UX and frontend for partner offers and integrations on the Roku web platform for Paramount+, HBO Max, and Peacock — high-stakes partner launches where design precision, cross-browser consistency, and accessibility were non-negotiable." },
         { id: "RESULTS", text: "Published a React component library as an NPM package — shared design patterns that reduced design-to-development friction and increased velocity across multiple Roku teams." },
         { id: "PROCESS", text: "Instrumented every touchpoint with GTM tagging - feeding quantitative engagement and performance data back into UX decisions so design choices were validated by behavior." },
