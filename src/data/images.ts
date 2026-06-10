@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import salesforceTower from "./images/salesforcetower.jpg";
-import roku from "./images/roku.webp";
+import salesforceTower from "./images/salesforce.svg";
+import roku from "./images/roku.png";
 import leviStrauss from "./images/levi-strauss.webp";
-import levi2 from "./images/levi2.jpg";
+import levi2 from "./images/levi_red.jpg";
 import apple from "./images/apple_.webp";
 import nasm from "./images/nasm.png";
 import guitar from "./images/guitar.jpg";

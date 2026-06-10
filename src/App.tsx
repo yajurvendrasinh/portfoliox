@@ -142,7 +142,7 @@ export default function App() {
     if (prefersReducedMotion) return;
 
     // Particle color adapts to theme — black in light mode, amber accent in dark mode
-    const particleColor = theme === "dark" ? "#fca311" : "#000000";
+    const particleColor = theme === "dark" ? "#fca311" : "#1a1a1a";
 
     if (
       (window as any).particlesJS &&
@@ -356,7 +356,7 @@ export default function App() {
             {/* Levi Strauss & Co. */}
             <ArtifactCard
               className="col-span-12 md:col-span-4"
-              image={IMAGES.leviStrauss}
+              image={IMAGES.levi2}
               title="Levi Strauss & Co."
               category="E-commerce / Headless CMS"
               project="Levi.com & Dockers.com"
