@@ -7,9 +7,19 @@ import { DraftingCompass } from "lucide-react";
 
 export interface BentoGridProps {
   circuitImage: string;
+  title?: string;
+  description?: string;
+  statValue?: string;
+  statLabel?: string;
 }
 
-export default function BentoGrid({ circuitImage }: BentoGridProps) {
+export default function BentoGrid({
+  circuitImage,
+  title = "Digital Vellum",
+  description = "Each interactive surface mimics the translucency and stacking properties of architectural paper, creating a sense of history and depth within the digital workspace.",
+  statValue = "128",
+  statLabel = "Modular Components"
+}: BentoGridProps) {
   return (
     <section className="py-32 px-6 md:px-12 bg-surface">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-auto md:h-[800px]">
@@ -18,7 +28,7 @@ export default function BentoGrid({ circuitImage }: BentoGridProps) {
             <>
               <img
                 src={circuitImage}
-                alt="Circuit board close up"
+                alt={title}
                 width={800}
                 height={800}
                 referrerPolicy="no-referrer"
@@ -37,9 +47,9 @@ export default function BentoGrid({ circuitImage }: BentoGridProps) {
           )}
         </div>
         <div className="md:col-span-2 bg-surface-lowest p-12 flex flex-col justify-center border-[0.5px] border-outline-variant/30">
-          <h3 className="font-display text-3xl font-bold mb-6 tracking-tighter">Digital Vellum</h3>
+          <h3 className="font-display text-3xl font-bold mb-6 tracking-tighter">{title}</h3>
           <p className="text-ink-muted text-sm leading-relaxed max-w-sm">
-            Each interactive surface mimics the translucency and stacking properties of architectural paper, creating a sense of history and depth within the digital workspace.
+            {description}
           </p>
         </div>
         <div className="bg-surface-muted flex items-center justify-center p-8 group overflow-hidden min-h-[200px]">
@@ -47,8 +57,8 @@ export default function BentoGrid({ circuitImage }: BentoGridProps) {
         </div>
         {/* Stats cell uses contrast tokens — inverts in dark mode */}
         <div className="bg-contrast text-on-contrast p-8 flex flex-col justify-end min-h-[200px]">
-          <span className="font-display text-4xl font-bold">128</span>
-          <span className="font-display text-[10px] uppercase tracking-widest opacity-60">Modular Components</span>
+          <span className="font-display text-4xl font-bold">{statValue}</span>
+          <span className="font-display text-[10px] uppercase tracking-widest opacity-60">{statLabel}</span>
         </div>
       </div>
     </section>

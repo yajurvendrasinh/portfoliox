@@ -16,11 +16,12 @@ import Manifesto from "./components/ManifestoPlus";
 import About from "./pages/About";
 import ExperienceDetail from "./pages/ExperienceDetail";
 import PlayState from "./pages/PlayState";
+import CaseStudies from "./pages/CaseStudies";
 import AsymmetricDetail from "./components/AsymmetricDetail";
 import ScrollHint from "./components/ScrollHint";
 import { IMAGES } from "./data/images";
 
-type View = "HOME" | "PROJECT" | "LIBRARY" | "ABOUT" | "EXPERIENCE" | "PLAY";
+type View = "HOME" | "PROJECT" | "LIBRARY" | "ABOUT" | "EXPERIENCE" | "PLAY" | "CASE_STUDY";
 
 function getExperienceIdFromHash(): string {
   const match = window.location.hash.match(/^#\/experience\/(.+)$/);
@@ -32,11 +33,17 @@ function getPlayIdFromHash(): string {
   return match ? match[1] : "";
 }
 
+function getCaseStudyIdFromHash(): string {
+  const match = window.location.hash.match(/^#\/casestudy\/(.+)$/);
+  return match ? match[1] : "";
+}
+
 function getViewFromHash(): View {
   const hash = window.location.hash;
   if (hash === "#/project") return "PROJECT";
   if (hash.startsWith("#/experience/")) return "EXPERIENCE";
   if (hash.startsWith("#/play/")) return "PLAY";
+  if (hash.startsWith("#/casestudy/")) return "CASE_STUDY";
   if (hash === "#/lab") return "LIBRARY";
   if (hash === "#/about") return "ABOUT";
   return "HOME";
@@ -96,6 +103,7 @@ export default function App() {
   const [view, setView] = useState<View>(getViewFromHash);
   const [experienceId, setExperienceId] = useState(getExperienceIdFromHash);
   const [playId, setPlayId] = useState(getPlayIdFromHash);
+  const [caseStudyId, setCaseStudyId] = useState(getCaseStudyIdFromHash);
 
   // Syncs with ThemeToggle's custom event so particles.js can react to theme changes
   const [theme, setTheme] = useState<"light" | "dark">(getInitialTheme);
@@ -125,6 +133,7 @@ export default function App() {
         setView(getViewFromHash());
         setExperienceId(getExperienceIdFromHash());
         setPlayId(getPlayIdFromHash());
+        setCaseStudyId(getCaseStudyIdFromHash());
       }
     }
     window.addEventListener("hashchange", onHashChange);
@@ -133,7 +142,7 @@ export default function App() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [view, experienceId, playId]);
+  }, [view, experienceId, playId, caseStudyId]);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
@@ -171,7 +180,7 @@ export default function App() {
             enable: true,
             distance: 150,
             color: particleColor,
-            opacity: 0.3,
+            opacity: 0.4,
             width: 1,
           },
           move: {
@@ -210,6 +219,14 @@ export default function App() {
       });
     }
   }, [view, theme]);
+
+  if (view === "CASE_STUDY") {
+    return (
+      <div key={caseStudyId}>
+        <CaseStudies caseStudyId={caseStudyId} />
+      </div>
+    );
+  }
 
   if (view === "EXPERIENCE") {
     return (
@@ -297,7 +314,7 @@ export default function App() {
               year="2025"
               index="001"
               onClick={() => {
-                window.open("https://yajurvendrasinh.github.io/wellness-platform/workout", "_blank");
+                window.location.hash = "#/casestudy/wellness-platform";
               }}
             />
             <RecordCard
@@ -307,7 +324,7 @@ export default function App() {
               year="2025"
               index="002"
               onClick={() => {
-                window.open("https://yajurvendrasinh.github.io/breathe", "_blank");
+                window.location.hash = "#/casestudy/breathe";
               }}
             />
           </div>
