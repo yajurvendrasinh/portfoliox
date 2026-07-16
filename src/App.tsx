@@ -309,12 +309,12 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <RecordCard
               image={IMAGES.wellness}
-              title="Wellness Platform"
+              title="Wellness Ethos"
               category="Health &amp; Fitness"
               year="2025"
               index="001"
               onClick={() => {
-                window.location.hash = "#/casestudy/wellness-platform";
+                window.location.hash = "#/casestudy/wellness-ethos";
               }}
             />
             <RecordCard

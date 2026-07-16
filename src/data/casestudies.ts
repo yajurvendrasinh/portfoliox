@@ -27,14 +27,17 @@ export interface CaseStudy {
     status: string;
     terminalLines: string[];
     image?: string;
+    video?: string;
   };
   // Dynamic fields for BentoGrid
   bentoGrid: {
     title: string;
     description: string;
-    image: string;
+    image?: string;
+    video?: string;
     statValue: string;
     statLabel: string;
+    link?: string;
   };
   prev: { id: string; name: string };
   next: { id: string; name: string };
@@ -42,31 +45,35 @@ export interface CaseStudy {
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
-    id: "wellness-platform",
+    id: "wellness-ethos",
     index: "01",
-    title: "Wellness Platform",
+    title: "Wellness Ethos",
     subtitle: "Health & Fitness",
     dates: "Jan 2025 - Present",
     year: "2025",
-    description: "A premium, responsive health and workout scheduling platform prioritizing intuitive UX and visual clarity.",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    sideLabel: "WELLNESS_PLATFORM_CS",
+    description: "Reducing decision fatigue through a minimalist workout builder.",
+    tags: ["Product Design", "UX Research", "Frontend Engineering", "Scientific Fitness Principles"],
+    sideLabel: "WELLNESS ETHOS",
     technicalGrid: {
-      title: "Core Mechanics",
+      title: "Core Idea",
       items: [
-        { label: "Flow // 01", title: "Frictionless Scheduling", text: "Minimizing cognitive load by transforming complex workout planning patterns into single-tap actions." },
-        { label: "Architecture // 02", title: "Instant Hydration", text: "Utilizing modern caching and optimistic updates to keep UI responsive under variable network conditions." }
+        { label: "Problem", title: "Overwhelmed User", text: "People rarely fail to exercise because they lack information. More often, they struggle to decide where to begin. Existing fitness products ask users to create accounts, install apps, choose programs, and learn new interfaces before delivering any value." },
+        { label: "Ideology", title: "Frictionless Scheduling", text: "Minimizing cognitive load by transforming complex workout planning brainstorming patterns into single-tap action." },
+        { label: "Outcome", title: "Scientific Training", text: "The result was a responsive browser-based workout builder that generates a personalized workout in three decisions—without requiring sign-up, installation, or onboarding." }
       ],
       status: "Operational",
       terminalLines: ["WELLNESS_SCHEDULER_V1.0", "SYNC_RATE: 100%"],
-      image: ""
+      image: IMAGES.wellness,
+      video: IMAGES.ethosgif
     },
     bentoGrid: {
-      title: "Interactive Telemetry",
-      description: "Visual charts, real-time statistics, and visual states that make health progress tangible and motivating.",
-      image: IMAGES.wellness,
-      statValue: "98%",
-      statLabel: "Completion Rate"
+      title: "Designing for fewer decisions",
+      description: "If users receive immediate, trustworthy guidance instead of more choices, they are more likely to begin exercising.",
+      link:'https://yajurvendrasinh.github.io/wellness-platform/workout',
+      image: IMAGES.ethosgif,
+      video: IMAGES.ethosgif,
+      statValue: "56",
+      statLabel: "Workouts Created"
     },
     prev: { id: "breathe", name: "Breathe Mindfulness" },
     next: { id: "breathe", name: "Breathe Mindfulness" },
@@ -79,24 +86,28 @@ export const CASE_STUDIES: CaseStudy[] = [
     dates: "Feb 2025",
     year: "2025",
     description: "An immersive, meditative experience utilizing CSS scroll-driven animations and tranquil color palettes to encourage deep breathing.",
-    tags: ["CSS Scroll Animations", "Audio Synthesis", "SVG", "Responsive Design"],
+    tags: ["Visual Design", "Product Design", "CSS Animation"],
     sideLabel: "BREATHE_MINDFULNESS_CS",
     technicalGrid: {
-      title: "Auditory Protocol",
+      title: "Core Idea",
       items: [
-        { label: "Visual // 01", title: "Scroll-Driven SVG", text: "Shapes expand and contract dynamically using native CSS custom properties mapped to scroll/time parameters." },
-        { label: "Sound // 02", title: "Binaural Synthesis", text: "Low-frequency waveforms synthesized in-browser to guide breathing cycles and improve calming efficiency." }
+        { label: "Problem", title: "Anxiety / Stress Overload", text: "People forget to breathe and take break from their busy schedule, overworking themselves to oblivion." },
+        { label: "Ideology", title: "Quick Action", text: "Quick access to scientifically researched breathing exercise at tap of the finger to take a break and get anxiety and stress under control" },
+        { label: "Outcome", title: "Click & Play", text: "The result was a responsive browser-based breathing app that visually helps user to get a quick breathing exercise without requiring sign-up, installation, or onboarding." }
       ],
       status: "Calibrated",
       terminalLines: ["AUDIO_ENGINE_V2.1", "LATENCY: <12ms"],
-      image: IMAGES.creativeJam
+      image: IMAGES.breathe,
+      video: IMAGES.breathegif
     },
     bentoGrid: {
-      title: "Visual Breathing Ring",
-      description: "A central SVG path breathing simulation that shifts size and color dynamically to provide an intuitive anchor for focus.",
+      title: "Visual Breathing Exercise",
+      link:'https://yajurvendrasinh.github.io/wellness-platform/breathe',
+      description: "A realtime breathing simulation that shifts size and instruction dynamically to provide an intuitive anchor for focus.",
       image: IMAGES.breathe,
-      statValue: "200ms",
-      statLabel: "Initial Load Time"
+      video: IMAGES.breatheTablet,
+      statValue: "Focused",
+      statLabel: "Breathwork"
     },
     prev: { id: "wellness-platform", name: "Wellness Platform" },
     next: { id: "wellness-platform", name: "Wellness Platform" },

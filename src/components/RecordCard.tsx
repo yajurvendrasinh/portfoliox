@@ -25,7 +25,7 @@ export default function RecordCard({ image, title, category, year, index, onClic
           height={450}
           referrerPolicy="no-referrer"
           loading="lazy"
-          className="w-full h-full object-cover brightness-75 transition-[filter] duration-700 group-hover:grayscale-0 group-hover:brightness-100"
+          className="w-full h-full object-cover brightness-100 transition-[filter] duration-700 group-hover:grayscale-0 group-hover:brightness-100"
         />
       ) : (
         <div className="w-full h-full flex flex-col items-center justify-center gap-3">
@@ -43,11 +43,11 @@ export default function RecordCard({ image, title, category, year, index, onClic
           <div className="grid grid-cols-2 gap-8 border-t border-white/10 dark:border-black/20 pt-8">
             <div>
               <span className="block font-display text-[10px] tracking-[0.2em] uppercase text-zinc-500 dark:text-black/50 mb-2">Category</span>
-              <span className="text-sm font-medium">{category}</span>
+              <span className="text-md font-medium">{category}</span>
             </div>
             <div>
               <span className="block font-display text-[10px] tracking-[0.2em] uppercase text-zinc-500 dark:text-black/50 mb-2">Year</span>
-              <span className="text-sm font-medium">{year}</span>
+              <span className="text-md font-medium">{year}</span>
             </div>
           </div>
         </div>

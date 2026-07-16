@@ -22,12 +22,18 @@ import rokuOfferModal from "./images/roku/Roku_offer_modal.png";
 import cjHero from "./images/creative_jam/cj_1.jpg";
 import cjEvent1 from "./images/creative_jam/_DSC0718.jpg";
 import cjEvent2 from "./images/creative_jam/cj_2.jpeg";
-import breathe from "./images/breathe.png";
-import wellness from "./images/wellness.png";
+import breathe from "./images/breathe/breathe_homepage.png";
+import wellness from "./images/wellness/ethos_home.png";
+import ethosgif from "./images/wellness/mock_vid.mp4";
+import breathegif from "./images/breathe/breathe_iphone.mp4";
+import breatheTablet from "./images/breathe/breathe_tablet.mp4";
 
 export const IMAGES = {
   wellness,
+  ethosgif,
+  breathegif,
   breathe,
+  breatheTablet,
   salesforceTower,
   roku,
   leviStrauss,

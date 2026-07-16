@@ -55,11 +55,11 @@ export default function ArtifactCard({
           <div className="grid grid-cols-2 gap-8 border-t border-zinc-800 dark:border-black/20 pt-8">
             <div>
               <p className="font-display text-[10px] uppercase text-zinc-500 dark:text-black/50 mb-1">Role</p>
-              <p className="text-sm">{role}</p>
+              <p className="text-md">{role}</p>
             </div>
             <div>
               <p className="font-display text-[10px] uppercase text-zinc-500 dark:text-black/50 mb-1">Year</p>
-              <p className="text-sm">{year}</p>
+              <p className="text-md">{year}</p>
             </div>
           </div>
         </div>

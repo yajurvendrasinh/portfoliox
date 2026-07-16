@@ -116,15 +116,18 @@ export default function CaseStudies({ caseStudyId }: CaseStudiesProps) {
           status={caseStudy.technicalGrid.status}
           terminalLines={caseStudy.technicalGrid.terminalLines}
           image={caseStudy.technicalGrid.image}
+          video={caseStudy.technicalGrid.video}
         />
 
         {/* Bento Grid Section */}
         <BentoGrid
           circuitImage={caseStudy.bentoGrid.image}
+          video={caseStudy.bentoGrid.video}
           title={caseStudy.bentoGrid.title}
           description={caseStudy.bentoGrid.description}
           statValue={caseStudy.bentoGrid.statValue}
           statLabel={caseStudy.bentoGrid.statLabel}
+          link={caseStudy.bentoGrid.link}
         />
 
         {/* Prev / Next Case Study Navigation */}
