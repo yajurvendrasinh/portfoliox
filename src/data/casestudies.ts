@@ -70,8 +70,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       title: "Designing for fewer decisions",
       description: "If users receive immediate, trustworthy guidance instead of more choices, they are more likely to begin exercising.",
       link:'https://yajurvendrasinh.github.io/wellness-platform/workout',
-      image: IMAGES.ethosgif,
-      video: IMAGES.ethosgif,
+      image: IMAGES.mackprowellness,
       statValue: "56",
       statLabel: "Workouts Created"
     },

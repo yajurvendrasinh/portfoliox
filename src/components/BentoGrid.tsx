@@ -27,7 +27,7 @@ export default function BentoGrid({
   return (
     <section className="py-32 px-6 md:px-12 bg-surface">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-auto md:h-[800px]">
-        <div className="md:col-span-2 md:row-span-2 bg-surface-muted relative overflow-hidden group min-h-[400px]">
+        <div className="md:col-span-2 md:row-span-2 relative overflow-hidden group min-h-[400px]">
           {video ? (
             <>
               <video
@@ -53,11 +53,11 @@ export default function BentoGrid({
                 height={800}
                 referrerPolicy="no-referrer"
                 loading="lazy"
-                className="w-full h-full object-cover grayscale opacity-100 group-hover:scale-110 transition-transform duration-[2s]"
+                className="w-full h-full object-contain opacity-100  transition-transform duration-[2s]"
               />
-              <div className="absolute bottom-8 left-8">
+              {/* <div className="absolute bottom-8 left-8">
                 <span className="font-display text-[10px] uppercase tracking-widest text-on-accent bg-accent px-2 py-1">Layer 01: Core</span>
-              </div>
+              </div> */}
             </>
           ) : (
             <div className="w-full h-full flex flex-col items-center justify-center gap-3">
