@@ -102,7 +102,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     },
     bentoGrid: {
       title: "Visual Breathing Exercise",
-      link:'https://yajurvendrasinh.github.io/wellness-platform/breathe',
+      link:'https://yajurvendrasinh.github.io/breathe',
       description: "A realtime breathing simulation that shifts size and instruction dynamically to provide an intuitive anchor for focus.",
       image: IMAGES.breathe,
       video: IMAGES.breatheTablet,
