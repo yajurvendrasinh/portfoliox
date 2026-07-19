@@ -37,14 +37,14 @@ export default function AsymmetricDetail({
           />
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center gap-3">
-            <span className="font-display text-[10px] uppercase tracking-[0.3em] text-ink-faint">Coming Soon</span>
+            <span className="font-display text-[11px] uppercase tracking-[0.3em] text-ink-faint">Coming Soon</span>
             <div className="h-[1px] w-12 bg-outline-variant" />
           </div>
         )}
       </div>
       <div className="space-y-12">
         <div className="space-y-4">
-          <span className="font-display text-[10px] uppercase tracking-widest text-ink-faint">{label}</span>
+          <span className="font-display text-[11px] uppercase tracking-widest text-ink-faint">{label}</span>
           <h2 className="font-display text-5xl font-bold uppercase tracking-tighter leading-none text-balance">{title}</h2>
         </div>
         <p className="text-xl text-ink-muted leading-relaxed max-w-md">{description}</p>

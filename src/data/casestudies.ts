@@ -46,7 +46,7 @@ export interface CaseStudy {
 export const CASE_STUDIES: CaseStudy[] = [
   {
     id: "wellness-ethos",
-    index: "01",
+    index: "02",
     title: "Wellness Ethos",
     subtitle: "Health & Fitness",
     dates: "Jan 2025 - Present",
@@ -79,7 +79,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     id: "breathe",
-    index: "02",
+    index: "01",
     title: "Breathe",
     subtitle: "Mindfulness",
     dates: "Feb 2025",

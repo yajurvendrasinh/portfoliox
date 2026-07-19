@@ -32,7 +32,7 @@ export default function ScrollHint() {
       aria-hidden="true"
     >
       <div className="w-[1px] h-10 bg-accent animate-scroll-hint" />
-      <span className="font-display text-[10px] tracking-[0.3em] uppercase text-ink-faint select-none">
+      <span className="font-display text-[11px] tracking-[0.3em] uppercase text-ink-faint select-none">
         Scroll
       </span>
     </div>

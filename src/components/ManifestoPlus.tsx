@@ -76,7 +76,7 @@ export default function ManifestoPlus({
             }
           `}
         >
-          <span className="font-display text-[10px] font-bold uppercase tracking-[0.3em] text-ink-subtle border-l-2 border-accent pl-4 mb-1 md:mb-4 block">
+          <span className="font-display text-[11px] font-bold uppercase tracking-[0.3em] text-ink-subtle border-l-2 border-accent pl-4 mb-1 md:mb-4 block">
             {label}
           </span>
           <h2

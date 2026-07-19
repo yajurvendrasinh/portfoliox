@@ -26,7 +26,7 @@ export default function Navigation({ activeItem = "HOME" }: NavigationProps) {
             key={item.label}
             href={item.href}
             {...("external" in item && item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-            className={`font-display uppercase tracking-widest text-[10px] transition-colors ${
+            className={`font-display uppercase tracking-widest text-[11px] transition-colors ${
               item.label === activeItem ? "text-ink font-bold border-b border-accent pb-1" : "text-ink-subtle hover:text-ink"
             }`}
           >
@@ -40,7 +40,7 @@ export default function Navigation({ activeItem = "HOME" }: NavigationProps) {
           href={import.meta.env.BASE_URL + "resume.html"}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-accent text-on-accent px-6 py-2 font-display uppercase tracking-widest text-[10px] transition-colors hover:bg-accent-hover"
+          className="bg-accent text-on-accent px-6 py-2 font-display uppercase tracking-widest text-[11px] transition-colors hover:bg-accent-hover"
         >
           Resume
         </a>

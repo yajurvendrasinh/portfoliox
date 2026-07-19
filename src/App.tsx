@@ -54,8 +54,9 @@ function getViewFromHash(): View {
 const HERO_SEQUENCE: [string, string][] = [
   ["UX", "ENGINEER"],
   ["UX", "DESIGNER"],
-  ["UI", "DESIGNER"],
-  ["UI", "ENGINEER"],
+    ["PRODUCT", "DESIGNER"],
+  ["UX", "DESIGNER"],
+  ["UX", "ENGINEER"],
   ["DESIGN", "ENGINEER"],
 ];
 
@@ -308,23 +309,25 @@ export default function App() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <RecordCard
-              image={IMAGES.wellness}
-              title="Wellness Ethos"
-              category="Health &amp; Fitness"
-              year="2025"
-              index="001"
-              onClick={() => {
-                window.location.hash = "#/casestudy/wellness-ethos";
-              }}
-            />
-            <RecordCard
+            video={IMAGES.breatheHomeProto}
               image={IMAGES.breathe}
               title="Breathe"
               category="Mindfulness"
               year="2025"
-              index="002"
+              index="01"
               onClick={() => {
                 window.location.hash = "#/casestudy/breathe";
+              }}
+            />
+            <RecordCard
+              video={IMAGES.workoutHomeProto}
+              image={IMAGES.wellness}
+              title="Wellness Ethos"
+              category="Health &amp; Fitness"
+              year="2025"
+              index="02"
+              onClick={() => {
+                window.location.hash = "#/casestudy/wellness-ethos";
               }}
             />
           </div>

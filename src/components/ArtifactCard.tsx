@@ -43,22 +43,22 @@ export default function ArtifactCard({
           />
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center gap-3">
-            <span className="font-display text-[10px] uppercase tracking-[0.3em] text-ink-faint">Coming Soon</span>
+            <span className="font-display text-[11px] uppercase tracking-[0.3em] text-ink-faint">Coming Soon</span>
             <div className="h-[1px] w-12 bg-outline-variant" />
           </div>
         )}
         <div className="absolute inset-0 bg-black dark:bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-12 text-white dark:text-on-accent">
           <div className="mb-auto">
-            <span className="font-display text-[10px] tracking-[0.2em] uppercase text-zinc-400 dark:text-black/60">{project}</span>
+            <span className="font-display text-[11px] tracking-[0.2em] uppercase text-zinc-400 dark:text-black/60">{project}</span>
             <h3 className="font-display text-4xl font-bold mt-2">{title}</h3>
           </div>
           <div className="grid grid-cols-2 gap-8 border-t border-zinc-800 dark:border-black/20 pt-8">
             <div>
-              <p className="font-display text-[10px] uppercase text-zinc-500 dark:text-black/50 mb-1">Role</p>
+              <p className="font-display text-[11px] uppercase text-zinc-500 dark:text-black/50 mb-1">Role</p>
               <p className="text-md">{role}</p>
             </div>
             <div>
-              <p className="font-display text-[10px] uppercase text-zinc-500 dark:text-black/50 mb-1">Year</p>
+              <p className="font-display text-[11px] uppercase text-zinc-500 dark:text-black/50 mb-1">Year</p>
               <p className="text-md">{year}</p>
             </div>
           </div>
@@ -67,7 +67,7 @@ export default function ArtifactCard({
       <div className="mt-6 flex justify-between items-start">
         <div>
           <h4 className="font-display font-bold text-lg uppercase tracking-tight">{title}</h4>
-          <p className="font-display text-[10px] text-ink-subtle tracking-widest mt-1 uppercase">{category}</p>
+          <p className="font-display text-[11px] text-ink-subtle tracking-widest mt-1 uppercase">{category}</p>
         </div>
         <ArrowUpRight className="text-ink-faint" size={20} aria-hidden="true" />
       </div>

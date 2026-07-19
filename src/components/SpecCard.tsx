@@ -22,7 +22,7 @@ export default function SpecCard({
 }: SpecCardProps) {
   return (
     <div className="p-8 bg-surface-high border-[0.5px] border-outline-variant/20 relative overflow-hidden">
-      <div className="absolute top-0 right-0 p-4 font-display text-[10px] tracking-widest text-ink-faint">
+      <div className="absolute top-0 right-0 p-4 font-display text-[11px] tracking-widest text-ink-faint">
         {version}
       </div>
       <p className="font-display text-xs tracking-widest uppercase mb-8 text-ink-subtle">{label}</p>
@@ -30,7 +30,7 @@ export default function SpecCard({
         {specs.map((spec) => (
           <li key={spec.name} className="flex justify-between items-end border-b-[0.5px] border-outline-variant/30 pb-2">
             <span className="text-xs uppercase font-medium">{spec.name}</span>
-            <span className="font-display text-[10px] text-ink-faint">{spec.value}</span>
+            <span className="font-display text-[11px] text-ink-faint">{spec.value}</span>
           </li>
         ))}
       </ul>

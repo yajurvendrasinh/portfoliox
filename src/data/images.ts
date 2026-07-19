@@ -27,10 +27,14 @@ import wellness from "./images/wellness/ethos_home.png";
 import ethosgif from "./images/wellness/mock_vid.mp4";
 import breathegif from "./images/breathe/breathe_iphone.mp4";
 import breatheTablet from "./images/breathe/breathe_tablet.mp4";
-import mackprowellness from "./images/wellness/macpro-mock.png"
+import mackprowellness from "./images/wellness/macpro-mock.png";
+import breatheHomeProto from "./images/breathe/home_proto.mp4";
+import workoutHomeProto from "./images/wellness/workout-home-proto.mp4";
 
 export const IMAGES = {
   wellness,
+  breatheHomeProto,
+  workoutHomeProto,
   mackprowellness,
   ethosgif,
   breathegif,

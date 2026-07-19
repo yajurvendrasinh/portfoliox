@@ -34,7 +34,7 @@ export default function TechnicalGrid({
           <div className="space-y-12">
             {items.map((item) => (
               <div key={item.title} className="border-l-[0.5px] border-on-contrast/20 pl-8">
-                <span className="font-display text-[10px] uppercase tracking-[0.2em] text-on-contrast-muted block mb-4">{item.label}</span>
+                <span className="font-display text-[11px] uppercase tracking-[0.2em] text-on-contrast-muted block mb-4">{item.label}</span>
                 <h4 className="font-display text-xl mb-4">{item.title}</h4>
                 <p className="text-on-contrast-muted text-md leading-relaxed">
                   {item.text}
@@ -62,7 +62,7 @@ export default function TechnicalGrid({
               <div className="flex justify-between items-start">
                 <Terminal className="text-on-contrast opacity-50" size={40} strokeWidth={1} aria-hidden="true" />
                 <div className="text-right">
-                  <span className="font-display text-[10px] uppercase tracking-widest text-on-contrast-muted">Status: {status}</span>
+                  <span className="font-display text-[11px] uppercase tracking-widest text-on-contrast-muted">Status: {status}</span>
                 </div>
               </div>
               <div className="space-y-4">
@@ -71,7 +71,7 @@ export default function TechnicalGrid({
                 <div className="h-[0.5px] bg-on-contrast/10 w-1/2"></div>
               </div>
               <div>
-                <p className="font-mono text-[10px] text-on-contrast-muted leading-relaxed">
+                <p className="font-mono text-[11px] text-on-contrast-muted leading-relaxed">
                   {terminalLines.map((line, idx) => (
                     <span key={idx}>
                       {line}

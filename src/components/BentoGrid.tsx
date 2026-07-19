@@ -41,7 +41,7 @@ export default function BentoGrid({
                 <source src={video} type="video/mp4" />
               </video>
               {/* <div className="absolute bottom-8 left-8">
-                <span className="font-display text-[10px] uppercase tracking-widest text-on-accent bg-accent px-2 py-1">Layer 01: Core</span>
+                <span className="font-display text-[11px] uppercase tracking-widest text-on-accent bg-accent px-2 py-1">Layer 01: Core</span>
               </div> */}
             </>
           ) : circuitImage ? (
@@ -56,12 +56,12 @@ export default function BentoGrid({
                 className="w-full h-full object-contain opacity-100  transition-transform duration-[2s]"
               />
               {/* <div className="absolute bottom-8 left-8">
-                <span className="font-display text-[10px] uppercase tracking-widest text-on-accent bg-accent px-2 py-1">Layer 01: Core</span>
+                <span className="font-display text-[11px] uppercase tracking-widest text-on-accent bg-accent px-2 py-1">Layer 01: Core</span>
               </div> */}
             </>
           ) : (
             <div className="w-full h-full flex flex-col items-center justify-center gap-3">
-              <span className="font-display text-[10px] uppercase tracking-[0.3em] text-ink-faint">Coming Soon</span>
+              <span className="font-display text-[11px] uppercase tracking-[0.3em] text-ink-faint">Coming Soon</span>
               <div className="h-[1px] w-12 bg-outline-variant" />
             </div>
           )}
@@ -88,7 +88,7 @@ export default function BentoGrid({
         {/* Stats cell uses contrast tokens — inverts in dark mode */}
         <div className="bg-contrast text-on-contrast p-8 flex flex-col justify-end min-h-[200px]">
           <span className="font-display text-4xl font-bold">{statValue}</span>
-          <span className="font-display text-[10px] uppercase tracking-widest opacity-60">{statLabel}</span>
+          <span className="font-display text-[11px] uppercase tracking-widest opacity-60">{statLabel}</span>
         </div>
       </div>
     </section>

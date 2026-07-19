@@ -23,7 +23,7 @@ export default function Manifesto() {
     <section id="process" className="px-6 md:px-12 max-w-7xl mx-auto">
       <div className="grid grid-cols-12 gap-12 items-start">
         <div className="col-span-12 md:col-span-4 sticky top-32">
-          <span className="font-display text-[10px] font-bold uppercase tracking-[0.3em] text-ink-subtle border-l-2 border-accent pl-4 mb-4 block">
+          <span className="font-display text-[11px] font-bold uppercase tracking-[0.3em] text-ink-subtle border-l-2 border-accent pl-4 mb-4 block">
             Manifesto
           </span>
           <h2 className="font-display text-5xl font-bold tracking-tighter uppercase leading-[0.9] text-balance">
