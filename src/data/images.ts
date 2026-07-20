@@ -8,10 +8,10 @@ import roku from "./images/roku.png";
 import leviStrauss from "./images/levi-strauss.webp";
 import levi2 from "./images/levi_red.jpg";
 import apple from "./images/apple_.webp";
-import nasm from "./images/nasm.png";
+import nasm from "./images/nasm.jpg";
 import guitar from "./images/guitar.jpg";
 import creativeJam from "./images/creativejam.webp";
-import improv from "./images/improv.jpeg";
+import improv from "./images/improv.webp";
 
 import sldsViz from "./images/slds/Viz_Screen_Plus.png";
 import sldsScreen from "./images/slds/SLDS_Screen_Plus.png";
