@@ -152,7 +152,7 @@ export default function App() {
     if (prefersReducedMotion) return;
 
     // Particle color adapts to theme — black in light mode, amber accent in dark mode
-    const particleColor = theme === "dark" ? "#fca311" : "#1a1a1a";
+    const particleColor = theme === "dark" ? "#fca311" : "#9f9fa9";
 
     if (
       (window as any).particlesJS &&
