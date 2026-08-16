@@ -108,8 +108,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       statValue: "Focused",
       statLabel: "Breathwork"
     },
-    prev: { id: "wellness-platform", name: "Wellness Platform" },
-    next: { id: "wellness-platform", name: "Wellness Platform" },
+    prev: { id: "wellness-ethos", name: "Wellness Ethos" },
+    next: { id: "wellness-ethos", name: "Wellness Ethos" },
   },
 ];
 

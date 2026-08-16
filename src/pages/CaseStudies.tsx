@@ -78,7 +78,7 @@ export default function CaseStudies({ caseStudyId }: CaseStudiesProps) {
 
       <main id="casestudy-content" className="relative pt-[calc(4rem_+_var(--sat))]">
         {/* Hero Section */}
-        <section className="min-h-screen flex flex-col justify-end px-6 md:px-12 pb-24 relative overflow-hidden">
+        <section className="min-h-[60vh] md:min-h-[70vh] flex flex-col justify-end px-6 md:px-12 pb-16 relative overflow-hidden">
           <div className="max-w-7xl mx-auto w-full">
             <div className="absolute top-24 right-12 text-right opacity-10 pointer-events-none">
               <span className="font-display text-[15vw] leading-none font-bold tracking-tighter uppercase select-none">{caseStudy.index}</span>
