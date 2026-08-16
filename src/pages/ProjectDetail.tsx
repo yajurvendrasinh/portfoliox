@@ -35,7 +35,7 @@ export default function ProjectDetail() {
 
       {/* Unified Header */}
       <header
-        className={`fixed top-0 w-full z-[60] bg-surface-lowest/70 backdrop-blur-md overflow-hidden transition-[height] duration-500 ease-[0.2,0,0,1] border-b border-outline-variant pt-[var(--sat)] ${
+        className={`fixed top-0 w-full z-[60] bg-surface-lowest/70 backdrop-blur-md overflow-hidden transition-[height] duration-500 ease-[0.2,0,0,1] pt-[var(--sat)] ${
           isHeaderExpanded ? "h-[calc(8rem_+_var(--sat))]" : "h-[calc(4rem_+_var(--sat))]"
         }`}
       >

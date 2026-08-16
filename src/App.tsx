@@ -4,6 +4,7 @@
  */
 
 import { useState, useEffect } from "react";
+import Lenis from '@studio-freight/lenis';
 import { motion, AnimatePresence } from "motion/react";
 import ProjectDetail from "./pages/ProjectDetail";
 import ComponentLibrary from "./pages/ComponentLibrary";
@@ -221,6 +222,57 @@ export default function App() {
     }
   }, [view, theme]);
 
+  // Lenis smooth scroll: initialize once and clean up on unmount
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    const lenis = new Lenis({ smooth: true , duration: 1.4 });
+
+    let rafId = 0 as number;
+    function raf(time: number) {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    }
+    rafId = requestAnimationFrame(raf);
+
+    const onLoad = () => {
+      if (location.hash) {
+        const el = document.querySelector(location.hash);
+        if (el) setTimeout(() => lenis.scrollTo(el as Element), 0);
+      }
+    };
+    window.addEventListener('load', onLoad);
+
+    const onClick = (e: Event) => {
+      const target = e.target as HTMLElement | null;
+      if (!target) return;
+      const anchor = target.closest && target.closest('a') as HTMLAnchorElement | null;
+      if (!anchor) return;
+      const href = anchor.getAttribute('href');
+      if (!href || !href.startsWith('#')) return;
+      const dest = document.querySelector(href);
+      if (dest) {
+        e.preventDefault();
+        lenis.scrollTo(dest as Element);
+      }
+    };
+    document.addEventListener('click', onClick);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.removeEventListener('load', onLoad);
+      document.removeEventListener('click', onClick);
+      try {
+        // Lenis may provide cleanup in future; call if available
+        (lenis as any).destroy && (lenis as any).destroy();
+      } catch (err) {
+        // ignore
+      }
+    };
+  }, []);
+
   if (view === "CASE_STUDY") {
     return (
       <div key={caseStudyId}>
@@ -265,7 +317,7 @@ export default function App() {
       <GrainOverlay />
 
       {/* Navigation */}
-      <header className="fixed top-0 w-full z-50 bg-surface-lowest/70 backdrop-blur-md h-[calc(4rem_+_var(--sat))] pt-[var(--sat)] border-b border-outline-variant">
+      <header className="fixed top-0 w-full z-50 bg-surface-lowest/70 backdrop-blur-md h-[calc(4rem_+_var(--sat))] pt-[var(--sat)]">
         <Navigation activeItem="HOME" />
       </header>
 
