@@ -26,20 +26,24 @@ import breathe from "./images/breathe/breathe_homepage.png";
 import wellness from "./images/wellness/ethos_home.png";
 import ethosgif from "./images/wellness/mock_vid.mp4";
 import breathegif from "./images/breathe/breathe_iphone.mp4";
-import breatheTablet from "./images/breathe/breathe_tablet.mp4";
 import mackprowellness from "./images/wellness/macpro-mock.png";
 import breatheHomeProto from "./images/breathe/home_proto.mp4";
 import workoutHomeProto from "./images/wellness/workout-home-proto.mp4";
+import breatheMac from "./images/breathe/Macbook_Breathe.png";
+import breatheThree from './images/breathe/breather_three.png';
+import breathePalatte from './images/breathe/breathePalatte.png';
 
 export const IMAGES = {
   wellness,
+  breatheMac,
   breatheHomeProto,
   workoutHomeProto,
+  breathePalatte,
   mackprowellness,
+  breatheThree,
   ethosgif,
   breathegif,
   breathe,
-  breatheTablet,
   salesforceTower,
   roku,
   leviStrauss,

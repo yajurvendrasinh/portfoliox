@@ -21,6 +21,26 @@ export interface CaseStudy {
   description: string;
   tags: string[];
   sideLabel: string;
+  testImage?: string;
+  context: string;
+  friction: string;
+  research: string;
+  asymmetricDetail: {
+    title: string;
+    description: string;
+    image: string;
+    video?: string;
+    ctaHref?: string;
+    ctaText?: string;
+  };
+  asymmetricDetailTwo: {
+    title: string;
+    description: string;
+    image: string;
+    video?: string;
+    ctaHref?: string;
+    ctaText?: string;
+  };
   technicalGrid: {
     title: string;
     items: TechnicalGridItem[];
@@ -54,6 +74,25 @@ export const CASE_STUDIES: CaseStudy[] = [
     description: "Reducing decision fatigue through a minimalist workout builder.",
     tags: ["Product Design", "UX Research", "Frontend Engineering", "Scientific Fitness Principles"],
     sideLabel: "WELLNESS ETHOS",
+    context: "Workout Builder gives you an instant workout based on three factors: your current level, your focus, and the time you have.",
+    friction: "Even motivated people freeze at the decision point where there are too many options, too many variables, and no clear answer. The fix isn't more information, it's fewer choices delivered with confidence",
+    research: "Breathe provides a visual cue for three breathing techniques, each chosen because it's scientifically grounded and covers a distinct physiological need. Box breathing — four seconds in, hold, four out, hold — down-regulates the nervous system and counters accumulated stress. 4-7-8 breathing calms things further for focus. A 6-6 technique increases oxygenation for elevated athletic performance. These three cover the fundamentals; nearly every other breathing exercise is a variation on one of them.",
+    asymmetricDetail: {
+      title: "Agency with Simplicity",
+      description: "More choices creates overwhelm. Fewer optimized choices builds decisions. The hardest part of working out isn't the workout. It's deciding to start.",
+      image: IMAGES.wellness,
+      video: IMAGES.ethosgif,
+      ctaHref: "https://yajurvendrasinh.github.io/wellness-platform/workout",
+      ctaText: "Try It"
+    },
+    asymmetricDetailTwo: {
+      title: "Lorem Ipsum",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet, nisl at suscipit tincidunt, neque lectus efficitur sem, vitae consequat justo magna vel augue.",
+      image: IMAGES.mackprowellness,
+      video: IMAGES.ethosgif,
+      ctaHref: "https://yajurvendrasinh.github.io/wellness-platform/workout",
+      ctaText: "Try It"
+    },
     technicalGrid: {
       title: "Core Idea",
       items: [
@@ -81,12 +120,33 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "breathe",
     index: "01",
     title: "Breathe",
-    subtitle: "Mindfulness",
+    subtitle: "Interactive Mindfulness",
     dates: "Feb 2025",
     year: "2025",
-    description: "An immersive, meditative experience utilizing CSS scroll-driven animations and tranquil color palettes to encourage deep breathing.",
-    tags: ["Visual Design", "Product Design", "CSS Animation"],
+    description: "A succint responsive web-app that provides quick access to scientifically researched breathing exercises for nervous system regulation, anxiety management and athletic performance enhancement",
+    tags: ['Product Design', 'Interaction Design', 'Visual Design'],
+    link: 'https://yajurvendrasinh.github.io/breathe',
     sideLabel: "BREATHE_MINDFULNESS_CS",
+    testImage: IMAGES.breatheMac,
+    context: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Individuals pursuing ambitious goals can struggle to down-regulate after sustained effort, creating a need for simple and immediate recovery tools.",
+    friction: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Existing mindfulness products often add signup, accounts, and paywalls before delivering value, increasing friction during moments of anxiety or stress.",
+    research: "Breathe provides a visual cue for three breathing techniques, each chosen because it's scientifically grounded and covers a distinct physiological need. Box breathing - down-regulates the nervous system and counters accumulated stress. 4-7-8 breathing calms things further for focus. A 6-6 technique increases oxygenation for elevated athletic performance.",
+    asymmetricDetail: {
+      title: "Interactivity with Purpose",
+      description: "Timed interactive animation eliminates cognitive load, allowing focused delightful experience",
+      image: IMAGES.breathegif,
+      video: IMAGES.breathegif,
+      ctaHref: 'https://yajurvendrasinh.github.io/breathe',
+      ctaText: "Try It"
+    },
+    asymmetricDetailTwo: {
+      title: "Simplicity with Distilled Protocols",
+      description: "The app provides a streamlined approach to mindfulness practice by distilling complex protocols into simple, actionable steps without overwhelming the user with more options.",
+      image: IMAGES.breatheThree,
+      ctaHref: 'https://yajurvendrasinh.github.io/breathe',
+      ctaText: "Try It"
+    },
+
     technicalGrid: {
       title: "Core Idea",
       items: [
@@ -100,11 +160,10 @@ export const CASE_STUDIES: CaseStudy[] = [
       video: IMAGES.breathegif
     },
     bentoGrid: {
-      title: "Visual Breathing Exercise",
+      title: "Design Artifacts",
       link:'https://yajurvendrasinh.github.io/breathe',
-      description: "A realtime breathing simulation that shifts size and instruction dynamically to provide an intuitive anchor for focus.",
-      image: IMAGES.breathe,
-      video: IMAGES.breatheTablet,
+      description: "Monochromatic palette provides more focused action and clear visual animations offloads overwhelm while focusing on mindfulness",
+      image: IMAGES.breathePalatte,
       statValue: "Focused",
       statLabel: "Breathwork"
     },
