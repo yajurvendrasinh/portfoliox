@@ -74,9 +74,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     description: "Reducing decision fatigue through a minimalist workout builder.",
     tags: ["Product Design", "UX Research", "Frontend Engineering", "Scientific Fitness Principles"],
     sideLabel: "WELLNESS ETHOS",
-    context: "Workout Builder gives you an instant workout based on three factors: your current level, your focus, and the time you have.",
-    friction: "Even motivated people freeze at the decision point where there are too many options, too many variables, and no clear answer. The fix isn't more information, it's fewer choices delivered with confidence",
-    research: "Breathe provides a visual cue for three breathing techniques, each chosen because it's scientifically grounded and covers a distinct physiological need. Box breathing — four seconds in, hold, four out, hold — down-regulates the nervous system and counters accumulated stress. 4-7-8 breathing calms things further for focus. A 6-6 technique increases oxygenation for elevated athletic performance. These three cover the fundamentals; nearly every other breathing exercise is a variation on one of them.",
+    context: "Workout Builder builds an instant workout based on three factors: current level, focus, and the time available for the session.",
+    friction: "Even motivated people freeze at the decision point where there are too many options available, too many variables, and no clear answer. The fix is simple, fewer choices delivered with confidence and backed by science and research",
+    research: "After working out with friends, acquaintance and gym buds, I realized they dont have a motivation problem, they have a decision and initiation problem. I have built this for them, so when they want anything quick and solid, they can use the app for their advantage",
     asymmetricDetail: {
       title: "Agency with Simplicity",
       description: "More choices creates overwhelm. Fewer optimized choices builds decisions. The hardest part of working out isn't the workout. It's deciding to start.",
@@ -86,8 +86,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       ctaText: "Try It"
     },
     asymmetricDetailTwo: {
-      title: "Lorem Ipsum",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet, nisl at suscipit tincidunt, neque lectus efficitur sem, vitae consequat justo magna vel augue.",
+      title: "Purposeful and Flexible",
+      description: "Three quick selections creates pleathora of workouts focused towards individual goals",
       image: IMAGES.mackprowellness,
       video: IMAGES.ethosgif,
       ctaHref: "https://yajurvendrasinh.github.io/wellness-platform/workout",

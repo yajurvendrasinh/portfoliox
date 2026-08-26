@@ -4,7 +4,7 @@
  */
 
 import { useState, useEffect } from "react";
-import Lenis from '@studio-freight/lenis';
+import Lenis from "@studio-freight/lenis";
 import { motion, AnimatePresence } from "motion/react";
 import ProjectDetail from "./pages/ProjectDetail";
 import ComponentLibrary from "./pages/ComponentLibrary";
@@ -22,7 +22,14 @@ import AsymmetricDetail from "./components/AsymmetricDetail";
 import ScrollHint from "./components/ScrollHint";
 import { IMAGES } from "./data/images";
 
-type View = "HOME" | "PROJECT" | "LIBRARY" | "ABOUT" | "EXPERIENCE" | "PLAY" | "CASE_STUDY";
+type View =
+  | "HOME"
+  | "PROJECT"
+  | "LIBRARY"
+  | "ABOUT"
+  | "EXPERIENCE"
+  | "PLAY"
+  | "CASE_STUDY";
 
 function getExperienceIdFromHash(): string {
   const match = window.location.hash.match(/^#\/experience\/(.+)$/);
@@ -55,7 +62,7 @@ function getViewFromHash(): View {
 const HERO_SEQUENCE: [string, string][] = [
   ["UX", "ENGINEER"],
   ["UX", "DESIGNER"],
-    ["PRODUCT", "DESIGNER"],
+  ["PRODUCT", "DESIGNER"],
   ["UX", "DESIGNER"],
   ["UX", "ENGINEER"],
   ["DESIGN", "ENGINEER"],
@@ -224,11 +231,13 @@ export default function App() {
 
   // Lenis smooth scroll: initialize once and clean up on unmount
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (typeof window === "undefined") return;
+    const prefersReduced =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
 
-    const lenis = new Lenis({ smooth: true , duration: 1.4 });
+    const lenis = new Lenis({ smooth: true, duration: 1.4 });
 
     let rafId = 0 as number;
     function raf(time: number) {
@@ -243,27 +252,28 @@ export default function App() {
         if (el) setTimeout(() => lenis.scrollTo(el as Element), 0);
       }
     };
-    window.addEventListener('load', onLoad);
+    window.addEventListener("load", onLoad);
 
     const onClick = (e: Event) => {
       const target = e.target as HTMLElement | null;
       if (!target) return;
-      const anchor = target.closest && target.closest('a') as HTMLAnchorElement | null;
+      const anchor =
+        target.closest && (target.closest("a") as HTMLAnchorElement | null);
       if (!anchor) return;
-      const href = anchor.getAttribute('href');
-      if (!href || !href.startsWith('#')) return;
+      const href = anchor.getAttribute("href");
+      if (!href || !href.startsWith("#")) return;
       const dest = document.querySelector(href);
       if (dest) {
         e.preventDefault();
         lenis.scrollTo(dest as Element);
       }
     };
-    document.addEventListener('click', onClick);
+    document.addEventListener("click", onClick);
 
     return () => {
       cancelAnimationFrame(rafId);
-      window.removeEventListener('load', onLoad);
-      document.removeEventListener('click', onClick);
+      window.removeEventListener("load", onLoad);
+      document.removeEventListener("click", onClick);
       try {
         // Lenis may provide cleanup in future; call if available
         (lenis as any).destroy && (lenis as any).destroy();
@@ -271,7 +281,7 @@ export default function App() {
         // ignore
       }
     };
-  }, []);
+  }, [view, experienceId, playId, caseStudyId]);
 
   if (view === "CASE_STUDY") {
     return (
@@ -361,7 +371,7 @@ export default function App() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <RecordCard
-            video={IMAGES.breatheHomeProto}
+              video={IMAGES.breatheHomeProto}
               image={IMAGES.breathe}
               title="Breathe"
               category="Mindfulness"
